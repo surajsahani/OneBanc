@@ -6,6 +6,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 
+/**
+ * @Author: surasahani
+ * @Date: 16.06.2022
+ */
+
 class OnboardingInstructions : AppCompatActivity() {
 
     private lateinit var closeIconPermission: ImageView

@@ -22,6 +22,11 @@ import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
 
 
+/**
+ * @Author: surasahani
+ * @Date: 16.06.2022
+ */
+
 class ScanActivity : AppCompatActivity() {
 
     private lateinit var svBarcode: SurfaceView

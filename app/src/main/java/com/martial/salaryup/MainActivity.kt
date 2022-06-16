@@ -9,6 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 
+/**
+ * @Author: surasahani
+ * @Date: 16.06.2022
+ */
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var getStarted : Button

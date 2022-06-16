@@ -7,6 +7,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
+/**
+ * @Author: surasahani
+ * @Date: 16.06.2022
+ */
 class OnboardingInviteCode : AppCompatActivity() {
 
     private lateinit var btNextInviteCode : Button

@@ -17,6 +17,11 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * @Author: surasahani
+ * @Date: 16.06.2022
+ */
+
 class OnboardingPermission : AppCompatActivity() {
 
     private val TAG = "PermissionDemo"
@@ -49,14 +54,14 @@ class OnboardingPermission : AppCompatActivity() {
     }
 
     private fun initialize() {
-        smsRead = findViewById(R.id.smsRead)
-        grantPermission = findViewById(R.id.grantPermission)
-        camera = findViewById(R.id.camera)
-        audio = findViewById(R.id.audio)
-        location = findViewById(R.id.location)
-        phone = findViewById(R.id.phone)
-        tvSub1 = findViewById(R.id.tvSub1)
-        tv1Permission = findViewById(R.id.tv1Permission)
+        //smsRead = findViewById(R.id.smsRead)
+        grantPermission = findViewById(R.id.Bt_grantPermission)
+//        camera = findViewById(R.id.camera)
+//        audio = findViewById(R.id.audio)
+//        location = findViewById(R.id.location)
+//        phone = findViewById(R.id.phone)
+//        tvSub1 = findViewById(R.id.tvSub1)
+//        tv1Permission = findViewById(R.id.tv1Permission)
     }
 
     private fun setupPermission() {
@@ -145,14 +150,16 @@ class OnboardingPermission : AppCompatActivity() {
                 //if it is granted then we show its granted
                 val isGranted = it.value
                 if (isGranted) {
+//
+//                    tvSub1.visibility = INVISIBLE;
 
-                    tvSub1.visibility = INVISIBLE;
+                    /*removing static setImage with animation*/
 
-                    smsRead.setImageResource(R.drawable.ic_tick)
-                    camera.setImageResource(R.drawable.ic_tick)
-                    audio.setImageResource(R.drawable.ic_tick)
-                    location.setImageResource(R.drawable.ic_tick)
-                    phone.setImageResource(R.drawable.ic_tick)
+//                    smsRead.setImageResource(R.drawable.ic_tick)
+//                    camera.setImageResource(R.drawable.ic_tick)
+//                    audio.setImageResource(R.drawable.ic_tick)
+//                    location.setImageResource(R.drawable.ic_tick)
+//                    phone.setImageResource(R.drawable.ic_tick)
 
                     val intent = Intent(this,ScanActivity::class.java)
                     startActivity(intent)
@@ -178,8 +185,8 @@ class OnboardingPermission : AppCompatActivity() {
                         Toast.makeText(this, "Permission granted for location", Toast.LENGTH_SHORT)
                             .show()
 
-                        tv1Permission.setTypeface(Typeface.DEFAULT)
-                        tv1Permission.textSize = 14f
+//                        tv1Permission.setTypeface(Typeface.DEFAULT)
+//                        tv1Permission.textSize = 14f
                     }
 
                     if (permissionName == Manifest.permission.READ_PHONE_STATE) {

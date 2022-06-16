@@ -4,6 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 
+
+/**
+ * @Author: surasahani
+ * @Date: 16.06.2022
+ */
+
 class OnboardingCongratulation : AppCompatActivity() {
 
     private lateinit var closeIconCongratulation : ImageView
