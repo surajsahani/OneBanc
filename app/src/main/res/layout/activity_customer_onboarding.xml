@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnboardingInstructions">
+
+
+    <ImageView
+        android:id="@+id/upperCurve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bg_upper_curve"
+        android:text="Hello World!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/oneBanc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:paddingTop="15sp"
+        android:src="@drawable/ic_onebanc_logo"
+        android:text="Hello World!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/closeIconPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_shape"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/close_open"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="Are you ready?"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@id/llOnboarding"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llOnboarding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv">
+
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="left"
+            android:paddingLeft="50dp"
+            android:text="You Should Have:"
+            app:layout_constraintBottom_toTopOf="@+id/tvSub1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tvSub1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:paddingLeft="20sp"
+            android:text="Original PAN Card"
+            app:drawableStartCompat="@drawable/ic_baseline_fiber_manual_record_24"
+            app:layout_constraintBottom_toTopOf="@+id/tv2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:paddingLeft="20sp"
+            android:text="Aadhaar Number"
+            app:drawableStartCompat="@drawable/ic_baseline_fiber_manual_record_24"
+            app:layout_constraintBottom_toTopOf="@+id/tvSub2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSub1" />
+
+        <TextView
+            android:id="@+id/tvSub2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="10dp"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:paddingStart="20sp"
+            android:paddingEnd="40sp"
+            android:text="Access to Aadhaar linked mobile number to get OTP"
+            app:drawableStartCompat="@drawable/ic_baseline_fiber_manual_record_24"
+            app:layout_constraintBottom_toTopOf="@+id/tvSub3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv2" />
+
+        <TextView
+            android:id="@+id/tvSub3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="10dp"
+            android:gravity="left"
+            android:paddingLeft="20sp"
+            android:textStyle="bold"
+
+            android:text="White blanck sheet and black pen"
+            app:drawableStartCompat="@drawable/ic_baseline_fiber_manual_record_24"
+            app:layout_constraintBottom_toTopOf="@+id/tvSub5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSub2" />
+
+        <TextView
+            android:id="@+id/tvSub5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+
+            android:paddingRight="50dp"
+            android:text="Do make sure your in a well lit room with a plain wall in the background"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSub3" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bg_lower_curve"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textAllCaps="false"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="26dp"
+        android:text="Yes, I'm Ready"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

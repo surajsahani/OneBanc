@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnboardingPermission">
+
+
+    <ImageView
+        android:id="@+id/upperCurve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bg_upper_curve"
+        android:text="Hello World!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/oneBanc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_onebanc_logo"
+        android:paddingTop="15sp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/closeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_shape"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/close_open"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="40dp"
+        android:text="We need few permission for seamless account opening journey"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/smsRead"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="20sp"-->
+<!--        android:src="@drawable/ic_sms"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/icMore1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintVertical_chainStyle="packed" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tv1Permission"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:text="SMS Read"-->
+<!--        android:textSize="18dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/smsRead"-->
+<!--        app:layout_constraintTop_toTopOf="@id/smsRead"-->
+<!--        app:layout_constraintStart_toEndOf="@id/smsRead"-->
+<!--        android:textStyle="bold"-->
+<!--        tools:layout_editor_absoluteX="104dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvSub1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="left"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv1Permission"-->
+<!--        app:layout_constraintStart_toEndOf="@id/smsRead"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:text="We need this access for seamless video \nKYC process"-->
+<!--        />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tv2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:text="Camera"-->
+<!--        android:textSize="14dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/camera"-->
+<!--        app:layout_constraintStart_toEndOf="@id/camera"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvSub1"-->
+<!--        app:layout_constraintTop_toTopOf="@id/camera"-->
+<!--        tools:layout_editor_absoluteX="101dp"-->
+<!--        tools:layout_editor_absoluteY="304dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvSub2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:paddingRight="10dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv2"-->
+<!--        app:layout_constraintStart_toEndOf="@id/camera"-->
+<!--        android:text="We need this access to verify your Camera"-->
+<!--        tools:layout_editor_absoluteX="104dp"-->
+<!--        tools:layout_editor_absoluteY="336dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tv3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginStart="20dp"-->
+
+<!--        android:text="Audio"-->
+<!--        android:textSize="14dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/audio"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv2"-->
+<!--        app:layout_constraintTop_toTopOf="@id/audio"-->
+<!--        app:layout_constraintStart_toEndOf="@id/audio"-->
+<!--        tools:layout_editor_absoluteX="104dp"-->
+<!--        tools:layout_editor_absoluteY="355dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvSub3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:paddingRight="10dp"-->
+<!--        app:layout_constraintStart_toEndOf="@id/audio"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv3"-->
+<!--        android:text="We need this access to verify audio"-->
+<!--        />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tv4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/location"-->
+<!--        android:text="Location"-->
+<!--        app:layout_constraintStart_toEndOf="@id/audio"-->
+<!--        app:layout_constraintTop_toTopOf="@id/location"-->
+<!--        android:textSize="14dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/tv5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:textSize="14dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/phone"-->
+<!--        android:text="Phone"-->
+<!--        app:layout_constraintTop_toTopOf="@id/phone"-->
+<!--        app:layout_constraintStart_toEndOf="@id/phone"-->
+<!--        />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/icMore"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_more"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/smsRead"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/smsRead"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/smsRead"-->
+<!--        />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/icMore1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_more"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/camera"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/smsRead"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/smsRead"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/smsRead" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/icMore2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_more"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/audio"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/camera"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/camera"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/camera" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/icMore3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_more"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/location"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/audio"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/audio"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/audio" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/icMore4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_more"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/phone"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/location"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/location"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/location" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/camera"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:src="@drawable/ic_camera"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/icMore2"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/icMore1"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/icMore1"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/icMore1" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/audio"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:src="@drawable/ic_mic"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/icMore3"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/icMore2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/icMore2"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/icMore2" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/location"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:src="@drawable/ic_location"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/icMore4"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/icMore3"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/icMore3"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/icMore3" />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/phone"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:src="@drawable/ic_phone"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/icMore4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/icMore4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/icMore4" />-->
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_bg_lower_curve"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/permissionRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tv"
+    app:layout_constraintBottom_toTopOf="@id/permissionBackground"
+    tools:listitem="@layout/item_recyclerview" />
+
+    <ImageView
+        android:id="@+id/permissionBackground"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_permissions_graphic"
+        app:layout_constraintBottom_toTopOf="@id/Bt_grantPermission"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bg_lower_curve"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/Bt_grantPermission"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Grant Permission"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="10sp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

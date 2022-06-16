@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1805" />
+        <entry key="app/src/main/res/drawable/close-48px.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/close.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/close_open.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/fadding_view.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/flashlight_on.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/ic__09629.xml" value="0.181" />
+        <entry key="app/src/main/res/drawable/ic__09685.xml" value="0.181" />
+        <entry key="app/src/main/res/drawable/ic_android.xml" value="0.1805" />
+        <entry key="app/src/main/res/drawable/ic_back.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_baseline_fiber_manual_record_24.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/ic_congrats_graphic.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/ic_kotak_logo.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_kotak_scan.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_mobile_graphic.xml" value="0.105" />
+        <entry key="app/src/main/res/drawable/ic_more.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_phone_graphic.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/ic_tick.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_yes_bank.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/ic_yes_scan.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/image.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/photo_library-48px.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/round_back.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/round_shape.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/style.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/textinputboarder.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_blurr_view.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_customer_onboarding.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_old_user.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_onboarding_congratulation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_onboarding_email.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_onboarding_invite_code.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_onboarding_name.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_onboarding_phone.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_onboarding_web_view.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_scan.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/content_blurr_view.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/content_onboarding_web_view.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/fragment_already_user.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/item_recyclerview.xml" value="0.33" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.18" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

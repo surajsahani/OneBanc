@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnboardingCongratulation">
+
+    <ImageView
+        android:id="@+id/upperCurve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bg_upper_curve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/oneBanc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_onebanc_logo"
+        android:paddingTop="15sp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/closeIconCongratulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_shape"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/close_open"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/graphicName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_congrats_graphic"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/congratulationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Congratualtion"
+        android:textSize="29dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/graphicName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/congratulationTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Name!"
+        android:textSize="29dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/congratulationText"
+        app:layout_constraintBottom_toTopOf="@+id/congratulationSubText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/congratulationSubText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome on-board"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/graphicName"
+        app:layout_constraintEnd_toEndOf="@+id/congratulationText"
+        app:layout_constraintStart_toStartOf="@+id/congratulationText"
+        app:layout_constraintTop_toBottomOf="@+id/congratulationText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

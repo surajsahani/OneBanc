@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ScanActivity">
+
+
+    <SurfaceView
+        android:id="@+id/surfaceBlur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </SurfaceView>
+
+<!--    <com.martial.salaryup.BlurrView-->
+<!--        android:id="@+id/blurView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:alpha="0.5"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--            <SurfaceView-->
+<!--                android:id="@+id/surfaceBlur"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--            </SurfaceView>-->
+<!--    </com.martial.salaryup.BlurrView>-->
+    <ImageView
+        android:id="@+id/closeIconScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_back"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/oneBanc"
+        android:paddingTop="15dp"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:paddingBottom="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_onebanc_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvScanInvite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:paddingBottom="10dp"
+        android:textStyle="bold"
+        android:text="Scan your invite code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scannerViewCard"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/scannerViewCard"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="5dp">
+        <SurfaceView
+            android:id="@+id/scannerView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center" />
+
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <SurfaceView-->
+<!--        android:id="@+id/scannerView"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        />-->
+
+    <ImageView
+        android:id="@+id/scannerFlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/flashlight_on"
+        android:background="@drawable/camera_background"
+        app:layout_constraintTop_toTopOf="@id/scannerViewCard"
+        app:layout_constraintStart_toEndOf="@id/scannerViewCard"
+        app:layout_constraintBottom_toTopOf="@id/scannerGallary"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/scannerGallary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintStart_toEndOf="@id/scannerViewCard"
+        android:src="@drawable/image"
+        android:background="@drawable/camera_background"
+        app:layout_constraintTop_toBottomOf="@id/scannerFlash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/scannerViewCard"/>
+
+    <TextView
+        android:id="@+id/tvCheckEmailScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:text="Check your email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scannerViewCard"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/etbarCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_6_digit_invite_code"
+        android:inputType="number"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@drawable/round_shape"
+        app:layout_constraintBottom_toTopOf="@id/ScanViewBanking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCheckEmailScan" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ScanViewBanking"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/etbarCode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/kotak"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_kotak_scan"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yes"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/yes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_yes_scan"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/kotak"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
