@@ -29,7 +29,7 @@
 
 
     <ImageView
-        android:id="@+id/closeIconPermission"
+        android:id="@+id/closeIconInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/round_shape"
@@ -80,7 +80,7 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/tvSub1"
+            android:id="@+id/tvSubInstruction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

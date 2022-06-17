@@ -7,6 +7,8 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -14,6 +16,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -36,7 +39,11 @@ class OnboardingPermission : AppCompatActivity() {
     private lateinit var tvSub1: TextView
     private lateinit var tv1Permission: TextView
     private lateinit var grantPermission: Button
-    private lateinit var permissionRecyclerView : RecyclerView
+    private lateinit var permissionRecyclerView: RecyclerView
+
+    private lateinit var closeIconPermission: ImageView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding_permission)
@@ -46,25 +53,31 @@ class OnboardingPermission : AppCompatActivity() {
         //data to populate the data for recyclerView
         //data to populate the data for recyclerView
         val data: ArrayList<String> = ArrayList()
-        for (i in 0..49) {
+        for (i in 0..5) {
             data.add("animal # $i")
         }
 
         permissionRecyclerView = findViewById(R.id.permissionRecyclerView)
         permissionRecyclerView.layoutManager = LinearLayoutManager(this)
+        //permissionRecyclerView.layoutManager = GridLayoutManager(baseContext, )
         permissionRecyclerView.adapter = OnboardingPermissionAdapter(data)
         permissionRecyclerView.smoothScrollToPosition(0)
+
 
     }
 
     fun initialize() {
         grantPermission = findViewById(R.id.Bt_grantPermission)
+        closeIconPermission = findViewById(R.id.closeIconPermission);
 
     }
 
     fun onClick() {
         grantPermission.setOnClickListener {
             setupPermission()
+        }
+        closeIconPermission.setOnClickListener {
+            finish()
         }
     }
 

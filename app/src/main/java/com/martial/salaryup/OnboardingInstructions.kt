@@ -13,29 +13,26 @@ import android.widget.ImageView
 
 class OnboardingInstructions : AppCompatActivity() {
 
-    private lateinit var closeIconPermission: ImageView
-    private lateinit var  button : Button
+    private lateinit var closeIconInstruction: ImageView
+    private lateinit var button: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_onboarding)
-
         initialize()
         onClick()
     }
 
     fun initialize() {
-        closeIconPermission = findViewById(R.id.closeIconPermission);
+        closeIconInstruction = findViewById(R.id.closeIconInstruction);
         button = findViewById(R.id.button)
     }
 
     fun onClick() {
 
-        closeIconPermission.setOnClickListener {
+        closeIconInstruction.setOnClickListener {
             finish()
             overridePendingTransition(R.anim.slide_stay, R.anim.slide_out_up)
-//            val intent = Intent(this, OldUser::class.java)
-//            startActivity(intent)
         }
 
         button.setOnClickListener {

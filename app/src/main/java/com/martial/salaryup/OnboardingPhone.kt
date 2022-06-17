@@ -1,9 +1,12 @@
 package com.martial.salaryup
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 
 /**
@@ -15,7 +18,7 @@ class OnboardingPhone : AppCompatActivity() {
 
     private lateinit var bt_PhoneNext: Button
     private lateinit var closeIconPhone : ImageView
-
+    private lateinit var etPhone : EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding_phone)
@@ -26,6 +29,7 @@ class OnboardingPhone : AppCompatActivity() {
     private fun initialize() {
         bt_PhoneNext = findViewById(R.id.bt_PhoneNext)
         closeIconPhone = findViewById(R.id.closeIconPhone)
+        etPhone = findViewById(R.id.etPhone)
     }
 
     private fun onClick() {
@@ -33,15 +37,20 @@ class OnboardingPhone : AppCompatActivity() {
             val intent = Intent(this, OnboardingEmail::class.java)
             startActivity(intent)
         }
-
         closeIconPhone.setOnClickListener {
             val intent = Intent(this@OnboardingPhone, OnboardingName::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()
         }
+        inputMode()
     }
-
+    fun inputMode() {
+        etPhone.requestFocus()
+        val imm: InputMethodManager =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(etPhone, InputMethodManager.SHOW_IMPLICIT)
+    }
     override fun onBackPressed() {
         super.onBackPressed()
         finish()

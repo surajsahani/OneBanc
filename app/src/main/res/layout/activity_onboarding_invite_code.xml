@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_bg_upper_curve"
-        android:text="Hello World!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:src="@drawable/ic_invite_graphic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,28 +50,32 @@
         android:id="@+id/tvEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
         android:gravity="left"
-        android:textSize="16dp"
-        android:paddingStart="40sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
         android:paddingBottom="10dp"
+        android:paddingStart="40dp"
+        android:textSize="16dp"
         android:background="@drawable/fadding_view"
         android:text="@string/hey_did_you_get_the_invite_code"
         app:layout_constraintBottom_toTopOf="@id/tvSubEmail"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/tvSubEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/fadding_view"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="20dp"
         android:paddingStart="40sp"
         android:paddingBottom="10dp"
+        android:layout_marginEnd="20sp"
         android:textSize="14dp"
         android:text="Check your work email"
         app:layout_constraintBottom_toTopOf="@id/etInviteCode"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
         android:id="@+id/etInviteCode"
@@ -95,12 +99,12 @@
         android:id="@+id/btNextInviteCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40sp"
-        android:layout_marginEnd="40sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
         android:text="Next"
-        android:layout_marginTop="50dp"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etInviteCode" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,14 @@
 package com.martial.salaryup
 
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
 
 
 /**
@@ -25,7 +26,6 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
         "We need this to verify communication address during video KYC process",
         "We need this access to verify your mobile number"
     )
-
     private val imageList = listOf(
         R.drawable.ic_sms,
         R.drawable.ic_camera,
@@ -35,22 +35,28 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
     )
 
     private var checkItem = -1
+    private lateinit var context: Context
+    private val mExpandedPosition = -1
+    private val recyclerView: RecyclerView? = null
 
     inner class OnboardingPermissionHolder(view: View) : RecyclerView.ViewHolder(view) {
         var tv: TextView? = null
         var subTv: TextView? = null
-        var cameraIc: ImageView? = null
+        var iconsIv: ImageView? = null
 
         init {
             tv = view.findViewById(R.id.tv1Permission)
             subTv = view.findViewById(R.id.tvSub1)
-            cameraIc = view.findViewById(R.drawable.ic_camera)
+            iconsIv = view.findViewById(R.id.ivIcon)
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnboardingPermissionHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview, parent, false)
+
+
         return OnboardingPermissionHolder(view)
 
     }
@@ -86,35 +92,30 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
                 this.setTextColor(R.color.black)
             }
         }
-        holder.cameraIc?.apply {
+
+        holder.iconsIv?.apply {
             //this.text = icons
             this.setImageResource(icons)
             this.setOnClickListener {
                 refresh(position)
             }
-            if (position == checkItem) {
-                this.isSelected = true
-                this.setImageResource(icons)
-                //this.setTextColor(R.color.white)
-            } else {
-                this.isSelected = false
-                this.setImageResource(icons)
-                //this.setTextColor(R.color.black)
-            }
+            this.isSelected = position == checkItem
         }
+
+
     }
+
 
     private fun refresh(position: Int) {
         checkItem = position
         notifyDataSetChanged()
     }
 
-    private fun setTextSizes(textSize: Int) {
-        this.listSize = listSize
-        notifyDataSetChanged()
-    }
-
-    fun getCheckedSize() = listSize[checkItem]
+//    private fun setTextSizes(textSize: Int) {
+//        this.listSize = listSize
+//        notifyDataSetChanged()
+//    }
+//    fun getCheckedSize() = listSize[checkItem]
 
     override fun getItemCount() = listSize.size
 

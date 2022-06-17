@@ -26,7 +26,8 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".OnboardingScanCode"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".OnboardingName"
             android:exported="false"

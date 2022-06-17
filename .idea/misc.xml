@@ -30,6 +30,8 @@
         <entry key="app/src/main/res/drawable/round_back.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/round_shape.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/scale_in_tv.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/scale_out_tv.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/style.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/textinputboarder.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_blurr_view.xml" value="0.19375" />
@@ -40,7 +42,7 @@
         <entry key="app/src/main/res/layout/activity_onboarding_email.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_invite_code.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_onboarding_name.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_phone.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_web_view.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.22" />

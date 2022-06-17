@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_bg_upper_curve"
-        android:text="Hello World!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +19,9 @@
         android:id="@+id/oneBanc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_onebanc_logo"
-        android:paddingTop="15sp"
         android:layout_marginEnd="5dp"
+        android:paddingTop="15sp"
+        android:src="@drawable/ic_onebanc_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,9 +29,9 @@
         android:id="@+id/closeIconName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_back"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/round_back"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:src="@drawable/ic_email_graphic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,17 +50,17 @@
         android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:paddingBottom="10dp"
-        android:paddingStart="40dp"
-        android:textSize="16dp"
-        android:text="First up what's your name"
         android:background="@drawable/fadding_view"
+        android:gravity="left"
+        android:paddingStart="40dp"
+        android:paddingBottom="10dp"
+        android:text="First up what's your name"
+        android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@id/tvSubName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvSubName"
@@ -68,26 +68,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:textSize="14dp"
+        android:background="@drawable/fadding_view"
         android:paddingStart="40dp"
         android:paddingBottom="10dp"
-        android:background="@drawable/fadding_view"
         android:text="Let's get to know each other"
+        android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@id/etName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="10dp"
         android:background="@drawable/rounded_corner"
-        app:layout_constraintTop_toBottomOf="@id/graphicName"
-        android:hint="Type your name here"/>
+        android:hint="Type your name here"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/graphicName" />
 
     <Button
         android:id="@+id/btNameNext"
@@ -95,9 +96,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:layout_marginTop="50dp"
         android:text="Next"
         android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etName" />
