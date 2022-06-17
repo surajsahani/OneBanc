@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".OnboardingWelcome">
 
     <ImageView
         android:id="@+id/upperCurve"
@@ -63,7 +63,6 @@
         app:layout_constraintBottom_toTopOf="@id/getStarted"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/welcomeTv"
         app:layout_constraintTop_toBottomOf="@id/welcomeTv" />
 
 
@@ -77,7 +76,6 @@
         app:layout_constraintBottom_toTopOf="@id/bankingPartner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/subwelcomeTv"
         app:layout_constraintTop_toBottomOf="@id/subwelcomeTv" />
 
     <TextView

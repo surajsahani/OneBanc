@@ -25,7 +25,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ScanActivity"
+            android:name=".OnboardingScanCode"
             android:exported="true" />
         <activity
             android:name=".OnboardingName"
@@ -46,10 +46,10 @@
             android:name=".OnboardingInstructions"
             android:exported="false" />
         <activity
-            android:name=".OldUser"
+            android:name=".OnboardingOldUser"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".OnboardingWelcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

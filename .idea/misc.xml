@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/drawable/ic_android.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/ic_back.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/ic_baseline_fiber_manual_record_24.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/ic_camera.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/ic_congrats_graphic.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/ic_kotak_logo.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/ic_kotak_scan.xml" value="0.165" />
@@ -39,7 +40,7 @@
         <entry key="app/src/main/res/layout/activity_onboarding_email.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_invite_code.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_onboarding_name.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_onboarding_phone.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_web_view.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.22" />
@@ -64,7 +65,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.18" />
+        <option name="scale" value="0.33" />
       </ProjectState>
     </option>
   </component>

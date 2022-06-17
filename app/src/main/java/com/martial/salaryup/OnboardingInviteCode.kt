@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 
 /**
  * @Author: surasahani
@@ -35,7 +34,7 @@ class OnboardingInviteCode : AppCompatActivity() {
         }
 
         closeIconInvite.setOnClickListener {
-            val intent = Intent(this@OnboardingInviteCode, ScanActivity::class.java)
+            val intent = Intent(this@OnboardingInviteCode, OnboardingScanCode::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()

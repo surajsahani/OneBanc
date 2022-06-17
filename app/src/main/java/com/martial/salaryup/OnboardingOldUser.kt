@@ -1,12 +1,9 @@
 package com.martial.salaryup
 
 import android.content.Intent
-import android.os.Bundle
-
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-
+import android.os.Bundle
+import android.widget.Button
 
 
 /**
@@ -14,28 +11,24 @@ import androidx.appcompat.app.AppCompatActivity
  * @Date: 16.06.2022
  */
 
-class MainActivity : AppCompatActivity() {
+class OnboardingOldUser : AppCompatActivity() {
 
-    private lateinit var getStarted : Button
-    private lateinit var welcomeTv : TextView
+    private lateinit var getStartedAgain : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_old_user)
         initialize()
         onClick()
     }
-
     fun initialize() {
-        getStarted = findViewById(R.id.getStarted);
-        welcomeTv = findViewById(R.id.welcomeTv)
+        getStartedAgain = findViewById(R.id.getStartedAgain);
     }
     fun onClick() {
-        getStarted.setOnClickListener {
+        getStartedAgain.setOnClickListener {
             //overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up)
             val intent = Intent(this, OnboardingInstructions::class.java)
             startActivity(intent)
-            overridePendingTransition( R.anim.slide_in_up, R.anim.slide_stay);
         }
     }
 }

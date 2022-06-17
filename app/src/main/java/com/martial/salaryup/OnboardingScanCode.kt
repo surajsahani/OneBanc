@@ -27,7 +27,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
  * @Date: 16.06.2022
  */
 
-class ScanActivity : AppCompatActivity() {
+class OnboardingScanCode : AppCompatActivity() {
 
     private lateinit var svBarcode: SurfaceView
     private lateinit var tvBarcode: TextView
@@ -90,14 +90,14 @@ class ScanActivity : AppCompatActivity() {
             override fun surfaceCreated(p0: SurfaceHolder) {
                 //Check Camera permission
                 if (ContextCompat.checkSelfPermission(
-                        this@ScanActivity,
+                        this@OnboardingScanCode,
                         android.Manifest.permission.CAMERA
                     ) == PackageManager.PERMISSION_GRANTED
                 ) {
                     cameraSource.start(p0)
                 } else {
                     ActivityCompat.requestPermissions(
-                        this@ScanActivity,
+                        this@OnboardingScanCode,
                         arrayOf(android.Manifest.permission.CAMERA),
                         123
                     )
@@ -119,14 +119,14 @@ class ScanActivity : AppCompatActivity() {
             override fun surfaceCreated(p0: SurfaceHolder) {
                 //Check Camera permission
                 if (ContextCompat.checkSelfPermission(
-                        this@ScanActivity,
+                        this@OnboardingScanCode,
                         android.Manifest.permission.CAMERA
                     ) == PackageManager.PERMISSION_GRANTED
                 ) {
                     cameraSource.start(p0)
                 } else {
                     ActivityCompat.requestPermissions(
-                        this@ScanActivity,
+                        this@OnboardingScanCode,
                         arrayOf(android.Manifest.permission.CAMERA),
                         123
                     )
@@ -145,7 +145,7 @@ class ScanActivity : AppCompatActivity() {
 
         closeIconScan.setOnClickListener {
 
-            val intent = Intent(this@ScanActivity, OnboardingPermission::class.java)
+            val intent = Intent(this@OnboardingScanCode, OnboardingPermission::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()

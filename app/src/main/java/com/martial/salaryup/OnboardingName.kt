@@ -27,7 +27,7 @@ class OnboardingName : AppCompatActivity() {
 
         closeIconName.setOnClickListener {
 
-            val intent = Intent(this@OnboardingName, OnboardingInviteCode::class.java)
+            val intent = Intent(this@OnboardingName, OnboardingOldUser::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()

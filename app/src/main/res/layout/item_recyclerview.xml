@@ -9,8 +9,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="20sp"
         android:src="@drawable/ic_sms"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="20sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,12 +27,15 @@
         android:textStyle="bold" />
     <TextView
         android:id="@+id/tvSub1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="left"
-        app:layout_constraintStart_toEndOf="@id/smsRead"
+        android:paddingEnd="10sp"
+        app:layout_constraintTop_toBottomOf="@id/tv1Permission"
         android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/smsRead"
         app:layout_constraintBottom_toBottomOf="@id/smsRead"
-        android:text="We need this access for seamless video \nKYC process"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20sp"
+        android:text="We need this access for seamless video \nKYC process" />
 </androidx.constraintlayout.widget.ConstraintLayout>

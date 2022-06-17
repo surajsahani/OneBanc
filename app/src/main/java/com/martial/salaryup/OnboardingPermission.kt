@@ -4,11 +4,9 @@ import android.Manifest
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.View.INVISIBLE
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,6 +14,9 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
 
 /**
  * @Author: surasahani
@@ -28,40 +29,43 @@ class OnboardingPermission : AppCompatActivity() {
     private val RECORD_REQUEST_CODE = 101
 
     private lateinit var smsRead: ImageView
-
     private lateinit var camera: ImageView
     private lateinit var audio: ImageView
     private lateinit var location: ImageView
     private lateinit var phone: ImageView
     private lateinit var tvSub1: TextView
-
     private lateinit var tv1Permission: TextView
-
     private lateinit var grantPermission: Button
-
-
+    private lateinit var permissionRecyclerView : RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding_permission)
         initialize()
         onClick()
+
+        //data to populate the data for recyclerView
+        //data to populate the data for recyclerView
+        val data: ArrayList<String> = ArrayList()
+        for (i in 0..49) {
+            data.add("animal # $i")
+        }
+
+        permissionRecyclerView = findViewById(R.id.permissionRecyclerView)
+        permissionRecyclerView.layoutManager = LinearLayoutManager(this)
+        permissionRecyclerView.adapter = OnboardingPermissionAdapter(data)
+        permissionRecyclerView.smoothScrollToPosition(0)
+
     }
 
-    private fun onClick() {
+    fun initialize() {
+        grantPermission = findViewById(R.id.Bt_grantPermission)
+
+    }
+
+    fun onClick() {
         grantPermission.setOnClickListener {
             setupPermission()
         }
-    }
-
-    private fun initialize() {
-        //smsRead = findViewById(R.id.smsRead)
-        grantPermission = findViewById(R.id.Bt_grantPermission)
-//        camera = findViewById(R.id.camera)
-//        audio = findViewById(R.id.audio)
-//        location = findViewById(R.id.location)
-//        phone = findViewById(R.id.phone)
-//        tvSub1 = findViewById(R.id.tvSub1)
-//        tv1Permission = findViewById(R.id.tv1Permission)
     }
 
     private fun setupPermission() {
@@ -161,7 +165,7 @@ class OnboardingPermission : AppCompatActivity() {
 //                    location.setImageResource(R.drawable.ic_tick)
 //                    phone.setImageResource(R.drawable.ic_tick)
 
-                    val intent = Intent(this,ScanActivity::class.java)
+                    val intent = Intent(this, OnboardingScanCode::class.java)
                     startActivity(intent)
 
                     //check the permission name and perform the specific operation
@@ -227,11 +231,6 @@ class OnboardingPermission : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        setupPermission()
     }
 
     override fun onBackPressed() {
