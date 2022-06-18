@@ -1,17 +1,11 @@
 <resources>
     <string name="app_name">SalaryUp</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_onboarding_web_view">OnboardingWebView</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_blurr_view">BlurrView</string>
+    <string name="what_s_your_name">What\'s <b>your name?</b></string>
+    <string name="let_s_get_to_know_each_other">Let\'s get to know each other</string>
     <string name="what_s_your_email">What\'s <b>your email</b></string>
     <string name="hey_did_you_get_the_invite_code">Hey, did you get the <b>invite code?</b></string>
     <string name="what_s_your_mobile_number_rajesh">What\'s <b>your mobile number,</b> Rajesh?</string>

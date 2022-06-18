@@ -39,7 +39,7 @@ class OnboardingScanCode : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scan)
+        setContentView(R.layout.activity_onboarding_scan)
 
 
         svBarcode = findViewById(R.id.scannerView)

@@ -18,7 +18,7 @@ class OnboardingInstructions : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_customer_onboarding)
+        setContentView(R.layout.activity_onboarding_instructions)
         initialize()
         onClick()
     }
