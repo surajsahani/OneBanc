@@ -2,12 +2,14 @@ package com.martial.salaryup
 
 
 import android.content.Context
+import android.content.pm.PackageManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.accessibility.AccessibilityEvent
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -17,7 +19,8 @@ import androidx.recyclerview.widget.RecyclerView
  */
 
 class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
-    RecyclerView.Adapter<OnboardingPermissionAdapter.OnboardingPermissionHolder>() {
+    RecyclerView.Adapter<OnboardingPermissionAdapter.OnboardingPermissionHolder>(),
+    ActivityCompat.OnRequestPermissionsResultCallback {
     private var listSize = listOf("SMS Read", "Camera", "Microphone", "Location", "Phone Identity")
     private val liseSizeSub = listOf(
         "We need this access to verify your SIM card",
@@ -38,6 +41,7 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
     private lateinit var context: Context
     private val mExpandedPosition = -1
     private val recyclerView: RecyclerView? = null
+    private val RECORD_REQUEST_CODE = 101
 
     inner class OnboardingPermissionHolder(view: View) : RecyclerView.ViewHolder(view) {
         var tv: TextView? = null
@@ -111,15 +115,39 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
         notifyDataSetChanged()
     }
 
-//    private fun setTextSizes(textSize: Int) {
-//        this.listSize = listSize
-//        notifyDataSetChanged()
-//    }
-//    fun getCheckedSize() = listSize[checkItem]
+    private fun setTextSizes(textSize: Int) {
+        this.listSize = listSize
+        notifyDataSetChanged()
+    }
+
+    fun getCheckedSize() = listSize[checkItem]
 
     override fun getItemCount() = listSize.size
 
     companion object {
         val TAG = "ModalAdapter"
     }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        this.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            RECORD_REQUEST_CODE -> {
+
+                if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+
+                    Log.i(TAG, "Permission has been denied by user")
+
+
+                } else {
+                    Log.i(TAG, "Permission has been granted by user")
+
+                }
+            }
+        }
+    }
+
 }

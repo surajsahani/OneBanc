@@ -13,7 +13,7 @@ import android.widget.Button
 
 class OnboardingOldUser : AppCompatActivity() {
 
-    private lateinit var getStartedAgain : Button
+    private lateinit var getStartedAgain: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +21,11 @@ class OnboardingOldUser : AppCompatActivity() {
         initialize()
         onClick()
     }
+
     fun initialize() {
         getStartedAgain = findViewById(R.id.getStartedAgain);
     }
+
     fun onClick() {
         getStartedAgain.setOnClickListener {
             //overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up)

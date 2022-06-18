@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView
 class OnboardingPermission : AppCompatActivity() {
 
     private val TAG = "PermissionDemo"
+
     private val RECORD_REQUEST_CODE = 101
 
     private lateinit var smsRead: ImageView
@@ -59,9 +60,9 @@ class OnboardingPermission : AppCompatActivity() {
 
         permissionRecyclerView = findViewById(R.id.permissionRecyclerView)
         permissionRecyclerView.layoutManager = LinearLayoutManager(this)
-        //permissionRecyclerView.layoutManager = GridLayoutManager(baseContext, )
         permissionRecyclerView.adapter = OnboardingPermissionAdapter(data)
-        permissionRecyclerView.smoothScrollToPosition(0)
+        //permissionRecyclerView.smoothScrollToPosition(0)
+        //permissionRecyclerView.scrollToPosition(data.size - 1)
 
 
     }
@@ -169,14 +170,13 @@ class OnboardingPermission : AppCompatActivity() {
                 if (isGranted) {
 //
 //                    tvSub1.visibility = INVISIBLE;
-
                     /*removing static setImage with animation*/
-
 //                    smsRead.setImageResource(R.drawable.ic_tick)
 //                    camera.setImageResource(R.drawable.ic_tick)
 //                    audio.setImageResource(R.drawable.ic_tick)
 //                    location.setImageResource(R.drawable.ic_tick)
 //                    phone.setImageResource(R.drawable.ic_tick)
+
 
                     val intent = Intent(this, OnboardingScanCode::class.java)
                     startActivity(intent)
@@ -223,28 +223,28 @@ class OnboardingPermission : AppCompatActivity() {
             }
         }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when (requestCode) {
-            RECORD_REQUEST_CODE -> {
-
-                if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-
-                    Log.i(TAG, "Permission has been denied by user")
-
-
-                } else {
-                    Log.i(TAG, "Permission has been granted by user")
-
-
-                }
-            }
-        }
-    }
+//    override fun onRequestPermissionsResult(
+//        requestCode: Int,
+//        permissions: Array<out String>,
+//        grantResults: IntArray
+//    ) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+//        when (requestCode) {
+//            RECORD_REQUEST_CODE -> {
+//
+//                if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+//
+//                    Log.i(TAG, "Permission has been denied by user")
+//
+//
+//                } else {
+//                    Log.i(TAG, "Permission has been granted by user")
+//
+//
+//                }
+//            }
+//        }
+//    }
 
     override fun onBackPressed() {
         super.onBackPressed()

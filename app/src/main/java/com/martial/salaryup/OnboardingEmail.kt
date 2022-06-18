@@ -17,9 +17,9 @@ import android.widget.ImageView
 
 class OnboardingEmail : AppCompatActivity() {
 
-    private lateinit var  btNext : Button
-    private lateinit var closeIconEmail : ImageView
-    private lateinit var etEmail : EditText
+    private lateinit var btNext: Button
+    private lateinit var closeIconEmail: ImageView
+    private lateinit var etEmail: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +54,7 @@ class OnboardingEmail : AppCompatActivity() {
             getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(etEmail, InputMethodManager.SHOW_IMPLICIT)
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         finish()

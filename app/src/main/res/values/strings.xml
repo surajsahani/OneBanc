@@ -15,6 +15,11 @@
     <string name="what_s_your_email">What\'s <b>your email</b></string>
     <string name="hey_did_you_get_the_invite_code">Hey, did you get the <b>invite code?</b></string>
     <string name="what_s_your_mobile_number_rajesh">What\'s <b>your mobile number,</b> Rajesh?</string>
-    <string name="enter_6_digit_invite_code">Enter <b>6-Digit Invite Code</b></string>
+    <string name="enter_6_digit_invite_code_scanner">Enter <b>6-Digit Invite Code</b></string>
+    <string name="enter_6_digit_invite_code">Enter 6-Digit Invite Code</string>
+
+    <string name="check_your_work_email">Check your work email</string>
+    <string name="_999_999_9999">999 999 9999</string>
+    <string name="promise_we_won_t_make_noise">Promise we won\'t make noise</string>
 
 </resources>

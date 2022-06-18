@@ -17,8 +17,8 @@ import android.widget.ImageView
 class OnboardingPhone : AppCompatActivity() {
 
     private lateinit var bt_PhoneNext: Button
-    private lateinit var closeIconPhone : ImageView
-    private lateinit var etPhone : EditText
+    private lateinit var closeIconPhone: ImageView
+    private lateinit var etPhone: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding_phone)
@@ -45,12 +45,14 @@ class OnboardingPhone : AppCompatActivity() {
         }
         inputMode()
     }
+
     fun inputMode() {
         etPhone.requestFocus()
         val imm: InputMethodManager =
             getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(etPhone, InputMethodManager.SHOW_IMPLICIT)
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         finish()

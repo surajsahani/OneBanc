@@ -1,9 +1,11 @@
 package com.martial.salaryup
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
@@ -38,7 +40,7 @@ class OnboardingName : AppCompatActivity() {
             startActivity(intent)
         }
         closeIconName.setOnClickListener {
-            val intent = Intent(this@OnboardingName, OnboardingOldUser::class.java)
+            val intent = Intent(this@OnboardingName, OnboardingInviteCode::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             finish()
@@ -52,8 +54,34 @@ class OnboardingName : AppCompatActivity() {
             getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(etName, InputMethodManager.SHOW_IMPLICIT)
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(ContentValues.TAG, "Main_OnStart_Name")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(ContentValues.TAG, "Main_OnResume_Name")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(ContentValues.TAG, "Main_OnPause_Name")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(ContentValues.TAG, "Main_OnStop_Name")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(ContentValues.TAG, "Main_OnDestroy_Name")
     }
 }

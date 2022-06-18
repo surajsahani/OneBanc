@@ -8,103 +8,107 @@
 
     <ImageView
         android:id="@+id/upperCurve"
+        android:src="@drawable/ic_bg_upper_curve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_bg_upper_curve"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
         android:id="@+id/oneBanc"
+        android:src="@drawable/ic_onebanc_logo"
+        android:layout_marginEnd="5dp"
+        android:paddingTop="15sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_onebanc_logo"
-        android:paddingTop="15sp"
-        android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/closeIconInvite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
         android:background="@drawable/round_back"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/ic_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/graphicInviteCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
         android:src="@drawable/ic_invite_graphic"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tvEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
+        android:text="@string/hey_did_you_get_the_invite_code"
+        android:background="@drawable/fadding_view"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:paddingBottom="10dp"
+        android:padding="10dp"
         android:paddingStart="40dp"
         android:textSize="16dp"
-        android:background="@drawable/fadding_view"
-        android:text="@string/hey_did_you_get_the_invite_code"
-        app:layout_constraintBottom_toTopOf="@id/tvSubEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvSubEmail" />
 
     <TextView
         android:id="@+id/tvSubEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="@string/check_your_work_email"
         android:background="@drawable/fadding_view"
         android:layout_marginStart="20dp"
+        android:layout_marginEnd="20sp"
         android:paddingStart="40sp"
         android:paddingBottom="10dp"
-        android:layout_marginEnd="20sp"
         android:textSize="14dp"
-        android:text="Check your work email"
-        app:layout_constraintBottom_toTopOf="@id/etInviteCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/etInviteCode" />
 
     <EditText
         android:id="@+id/etInviteCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter 6-Digit Invite Code"
-        android:inputType="number"
+        android:hint="@string/enter_6_digit_invite_code"
         android:background="@drawable/rounded_corner"
-        android:textSize="18dp"
-        android:paddingStart="40sp"
-        android:paddingRight="40dp"
-        android:padding="10dp"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
+        android:layout_marginBottom="20sp"
+        android:inputType="number"
         android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp"
+        android:paddingStart="40sp"
+        android:paddingEnd="40dp"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/graphicInviteCode" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btNextInviteCode" />
 
     <Button
         android:id="@+id/btNextInviteCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="@string/next"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:text="Next"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etInviteCode" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

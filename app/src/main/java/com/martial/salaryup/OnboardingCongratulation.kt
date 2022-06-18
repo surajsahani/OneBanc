@@ -12,7 +12,7 @@ import android.widget.ImageView
 
 class OnboardingCongratulation : AppCompatActivity() {
 
-    private lateinit var closeIconCongratulation : ImageView
+    private lateinit var closeIconCongratulation: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -7,99 +7,105 @@
     tools:context=".OnboardingName">
 
     <ImageView
-        android:id="@+id/upperCurve"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_bg_upper_curve"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageView
-        android:id="@+id/oneBanc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:paddingTop="15sp"
-        android:src="@drawable/ic_onebanc_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/closeIconName"
+        android:src="@drawable/ic_back"
+        android:background="@drawable/round_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/round_back"
-        android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/graphicName"
-        android:layout_width="match_parent"
+        android:id="@+id/upperCurve"
+        android:src="@drawable/ic_bg_upper_curve"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:src="@drawable/ic_email_graphic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/oneBanc"
+        android:src="@drawable/ic_onebanc_logo"
+        android:layout_marginEnd="5dp"
+        android:paddingTop="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/graphicName"
+        android:src="@drawable/ic_email_graphic"
+        android:layout_height="0dp"
+        android:paddingTop="20sp"
+        android:layout_width="match_parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="@string/hey_did_you_get_the_invite_code"
+        android:background="@drawable/fadding_view"
+        android:textSize="16dp"
+        android:paddingStart="40dp"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:background="@drawable/fadding_view"
-        android:gravity="left"
-        android:paddingStart="40dp"
-        android:paddingBottom="10dp"
-        android:text="First up what's your name"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@id/tvSubName"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/tvSubName" />
 
     <TextView
         android:id="@+id/tvSubName"
+        android:text="@string/check_your_work_email"
+        android:background="@drawable/fadding_view"
+        android:textSize="14dp"
+        android:paddingStart="40sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20sp"
+        android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:background="@drawable/fadding_view"
-        android:paddingStart="40dp"
-        android:paddingBottom="10dp"
-        android:text="Let's get to know each other"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@id/etName"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/etName"/>
 
     <EditText
         android:id="@+id/etName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:hint="@string/enter_6_digit_invite_code"
+        android:textSize="18dp"
+        android:paddingStart="40sp"
+        android:paddingEnd="40dp"
+        android:maxLines="1"
+        android:inputType="number"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:background="@drawable/rounded_corner"
-        android:hint="Type your name here"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/graphicName" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btNameNext" />
 
     <Button
         android:id="@+id/btNameNext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:textAllCaps="false"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
-        android:text="Next"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etName" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
