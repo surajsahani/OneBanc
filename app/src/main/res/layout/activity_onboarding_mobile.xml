@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnboardingPhone">
+    tools:context=".OnboardingMobile">
 
     <ImageView
         android:id="@+id/closeIconPhone"
@@ -39,7 +39,7 @@
 
     <ImageView
         android:id="@+id/graphicName"
-        android:src="@drawable/ic_email_graphic"
+        android:src="@drawable/ic_mobile_graphic"
         android:layout_height="0dp"
         android:paddingTop="20sp"
         android:layout_width="match_parent"

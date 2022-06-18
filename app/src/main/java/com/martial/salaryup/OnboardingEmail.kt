@@ -2,13 +2,16 @@ package com.martial.salaryup
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
+import android.util.Patterns
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import java.util.regex.Pattern
+
 
 /**
  * @Author: surasahani
@@ -19,6 +22,7 @@ class OnboardingEmail : AppCompatActivity() {
 
     private lateinit var btNext: Button
     private lateinit var closeIconEmail: ImageView
+
     private lateinit var etEmail: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,10 +38,30 @@ class OnboardingEmail : AppCompatActivity() {
         etEmail = findViewById(R.id.etEmail)
     }
 
+    private fun isValidEmail(email: String): Boolean {
+        val pattern: Pattern = Patterns.EMAIL_ADDRESS
+        return pattern.matcher(email).matches()
+    }
+
     private fun onClick() {
+
+
         btNext.setOnClickListener {
-            val intent = Intent(this, OnboardingCongratulation::class.java)
-            startActivity(intent)
+
+            val email: String = etEmail.text.toString()
+            if (email.isNotEmpty()) {
+                if (isValidEmail(email)) {
+                    val intent = Intent(this@OnboardingEmail, OnboardingCongratulation::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    etEmail.error = "Invalid email!"
+                }
+            } else {
+                etEmail.error = "Email required!"
+            }
+
         }
         closeIconEmail.setOnClickListener {
             val intent = Intent(this@OnboardingEmail, OnboardingName::class.java)
@@ -55,6 +79,10 @@ class OnboardingEmail : AppCompatActivity() {
         imm.showSoftInput(etEmail, InputMethodManager.SHOW_IMPLICIT)
     }
 
+    override fun onResume() {
+        super.onResume()
+        etEmail.setText("")
+    }
     override fun onBackPressed() {
         super.onBackPressed()
         finish()

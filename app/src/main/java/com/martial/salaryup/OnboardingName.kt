@@ -35,9 +35,15 @@ class OnboardingName : AppCompatActivity() {
     }
 
     fun onClick() {
+
         btNameNext.setOnClickListener {
-            val intent = Intent(this, OnboardingPhone::class.java)
-            startActivity(intent)
+            val name: String = etName.text.toString()
+            if (name.isNotEmpty()) {
+                val intent = Intent(this, OnboardingMobile::class.java)
+                startActivity(intent)
+            } else {
+                etName.error = "Name is required"
+            }
         }
         closeIconName.setOnClickListener {
             val intent = Intent(this@OnboardingName, OnboardingInviteCode::class.java)
@@ -68,6 +74,7 @@ class OnboardingName : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.d(ContentValues.TAG, "Main_OnResume_Name")
+        etName.setText("")
     }
 
     override fun onPause() {

@@ -32,7 +32,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".OnboardingPhone"
+            android:name=".OnboardingMobile"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity

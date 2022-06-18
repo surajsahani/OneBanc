@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView
  * @Date: 16/06/22
  */
 
+const val CONSTANT = "something"
+
 class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
     RecyclerView.Adapter<OnboardingPermissionAdapter.OnboardingPermissionHolder>(),
     ActivityCompat.OnRequestPermissionsResultCallback {
@@ -38,9 +40,6 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
     )
 
     private var checkItem = -1
-    private lateinit var context: Context
-    private val mExpandedPosition = -1
-    private val recyclerView: RecyclerView? = null
     private val RECORD_REQUEST_CODE = 101
 
     inner class OnboardingPermissionHolder(view: View) : RecyclerView.ViewHolder(view) {

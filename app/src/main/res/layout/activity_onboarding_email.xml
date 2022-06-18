@@ -86,7 +86,7 @@
         android:background="@drawable/rounded_corner"
         android:hint="name@example.com"
         android:textSize="18dp"
-        android:inputType="number"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
         android:paddingStart="40sp"
         android:paddingEnd="40dp"

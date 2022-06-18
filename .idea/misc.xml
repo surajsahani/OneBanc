@@ -45,6 +45,7 @@
         <entry key="app/src/main/res/layout/activity_onboarding_name.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_phone.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_onboarding_scan.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_onboarding_web_view.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.22" />
         <entry key="app/src/main/res/layout/content_blurr_view.xml" value="0.19375" />

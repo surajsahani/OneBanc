@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 
 /**
  * @Author: surasahani
@@ -20,6 +21,8 @@ class OnboardingInviteCode : AppCompatActivity() {
     private lateinit var btNextInviteCode: Button
     private lateinit var closeIconInvite: ImageView
     private lateinit var etInviteCode: EditText
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,10 +40,16 @@ class OnboardingInviteCode : AppCompatActivity() {
 
     fun onClick() {
         btNextInviteCode.setOnClickListener {
-            //overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up)
-            val intent = Intent(this, OnboardingName::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-            startActivity(intent)
+
+            val code: String = etInviteCode.text.toString()
+            if(code.length == 6) {
+                val intent = Intent(this, OnboardingName::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }  else  {
+                etInviteCode.error = "Invalid Code"
+            }
+
         }
 
         closeIconInvite.setOnClickListener {
@@ -74,6 +83,7 @@ class OnboardingInviteCode : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Log.d(TAG, "Main_OnStop")
+        etInviteCode.setText("")
     }
 
     override fun onDestroy() {

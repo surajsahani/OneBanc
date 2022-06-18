@@ -55,7 +55,7 @@ class OnboardingPermission : AppCompatActivity() {
         //data to populate the data for recyclerView
         val data: ArrayList<String> = ArrayList()
         for (i in 0..5) {
-            data.add("animal # $i")
+            data.add("permission # $i")
         }
 
         permissionRecyclerView = findViewById(R.id.permissionRecyclerView)
