@@ -1,8 +1,9 @@
 package com.martial.salaryup
 
 
-import android.content.Context
 import android.content.pm.PackageManager
+import android.content.res.Resources
+import android.graphics.Typeface
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,11 +19,11 @@ import androidx.recyclerview.widget.RecyclerView
  * @Date: 16/06/22
  */
 
-const val CONSTANT = "something"
 
 class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
     RecyclerView.Adapter<OnboardingPermissionAdapter.OnboardingPermissionHolder>(),
     ActivityCompat.OnRequestPermissionsResultCallback {
+
     private var listSize = listOf("SMS Read", "Camera", "Microphone", "Location", "Phone Identity")
     private val liseSizeSub = listOf(
         "We need this access to verify your SIM card",
@@ -52,15 +53,14 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
             subTv = view.findViewById(R.id.tvSub1)
             iconsIv = view.findViewById(R.id.ivIcon)
         }
-
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnboardingPermissionHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview, parent, false)
-
-
         return OnboardingPermissionHolder(view)
+
 
     }
 
@@ -68,6 +68,12 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
         val text = listSize[position]
         val subText = liseSizeSub[position]
         val icons = imageList[position]
+
+        if (position%5==0) {
+            holder.tv?.textSize = 30f
+        } else {
+            holder.subTv?.textSize = 0f
+        }
 
         holder.tv?.apply {
             this.text = text
@@ -104,7 +110,9 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
             }
             this.isSelected = position == checkItem
         }
-
+        if (holder.tv?.id == 1) {
+            holder.tv?.textSize = 90f
+        }
 
     }
 
@@ -114,12 +122,8 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
         notifyDataSetChanged()
     }
 
-    private fun setTextSizes(textSize: Int) {
-        this.listSize = listSize
-        notifyDataSetChanged()
-    }
-
     fun getCheckedSize() = listSize[checkItem]
+
 
     override fun getItemCount() = listSize.size
 
@@ -142,11 +146,12 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
 
 
                 } else {
+
                     Log.i(TAG, "Permission has been granted by user")
+
 
                 }
             }
         }
     }
-
 }
