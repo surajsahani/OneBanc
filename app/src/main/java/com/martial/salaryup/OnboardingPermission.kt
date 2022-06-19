@@ -3,6 +3,7 @@ package com.martial.salaryup
 import android.Manifest
 import android.app.AlertDialog
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +24,10 @@ import androidx.recyclerview.widget.RecyclerView
  */
 
 class OnboardingPermission : AppCompatActivity() {
+
+    companion object {
+        val REQUEST_PERMISSION_CODE = 10
+    }
 
     private val TAG = "PermissionDemo"
 
@@ -78,88 +83,147 @@ class OnboardingPermission : AppCompatActivity() {
 
     fun onClick() {
         grantPermission.setOnClickListener {
-
-            setupPermission()
+            smsPermission()
+            cameraPermission()
+            microphonePermission()
+            locationPermission()
+            phoneIdentity()
         }
         closeIconPermission.setOnClickListener {
             finish()
         }
     }
 
-    private fun setupPermission() {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-                Manifest.permission.CAMERA
-            )
-        ) {
-            showRationaleDialog(
-                "OneBanc requires camera access",
-                "Camera cannot be used as access is denied."
-            )
+    private fun smsPermission() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-                Manifest.permission.READ_SMS
-            )
-        ) {
-
-            showRationaleDialog(
-                "OneBanc requires SMS access",
-                "SMS cannot be used as access is denied."
-            )
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-                Manifest.permission.RECORD_AUDIO
-            )
-        ) {
-
-            showRationaleDialog(
-                "OneBanc requires Audio access",
-                "Audio cannot be used as access is denied."
-            )
-
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) && shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)
-        ) {
-
-            showRationaleDialog(
-                "OneBanc requires Location access",
-                "Location cannot be used as access is denied."
-            )
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-                Manifest.permission.READ_PHONE_STATE
-            )
-        ) {
-
-            showRationaleDialog(
-                "OneBanc requires Phone access",
-                "Phone access cannot be used as access is denied."
-            )
+        if (checkSelfPermission(Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "Permission Granted", Toast.LENGTH_LONG).show()
         } else {
-            permissionResultLauncher.launch(
-                arrayOf(
-                    Manifest.permission.READ_SMS,
-                    Manifest.permission.CAMERA,
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.READ_PHONE_STATE
-                )
-            )
+            var permission = arrayOf(Manifest.permission.READ_SMS)
+            requestPermissions(permission, REQUEST_PERMISSION_CODE)
         }
     }
 
-    private fun showRationaleDialog(title: String, message: String) {
-        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder.setTitle(title)
-            .setMessage(message)
-            .setPositiveButton("Cancel") { dialog, _ ->
-                dialog.dismiss()
-            }
-        builder.create().show()
+    private fun cameraPermission() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return
+        }
+        if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+        } else {
+            var permission = arrayOf(Manifest.permission.CAMERA)
+            requestPermissions(permission, REQUEST_PERMISSION_CODE)
+        }
     }
+
+    private fun microphonePermission() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return
+        }
+        if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+        } else {
+            var permission = arrayOf(Manifest.permission.RECORD_AUDIO)
+            requestPermissions(permission, REQUEST_PERMISSION_CODE)
+        }
+    }
+
+    private fun locationPermission() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return
+        }
+        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        } else {
+            var permission = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+            requestPermissions(permission, REQUEST_PERMISSION_CODE)
+        }
+    }
+
+    private fun phoneIdentity() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return
+        }
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+        } else {
+            var permission = arrayOf(Manifest.permission.READ_PHONE_STATE)
+            requestPermissions(permission, REQUEST_PERMISSION_CODE)
+        }
+    }
+
+//    private fun setupPermission() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+//                Manifest.permission.CAMERA
+//            )
+//        ) {
+//            showRationaleDialog(
+//                "OneBanc requires camera access",
+//                "Camera cannot be used as access is denied."
+//            )
+//        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+//                Manifest.permission.READ_SMS
+//            )
+//        ) {
+//
+//            showRationaleDialog(
+//                "OneBanc requires SMS access",
+//                "SMS cannot be used as access is denied."
+//            )
+//        }
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+//                Manifest.permission.RECORD_AUDIO
+//            )
+//        ) {
+//
+//            showRationaleDialog(
+//                "OneBanc requires Audio access",
+//                "Audio cannot be used as access is denied."
+//            )
+//
+//        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+//                Manifest.permission.ACCESS_FINE_LOCATION
+//            ) && shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)
+//        ) {
+//
+//            showRationaleDialog(
+//                "OneBanc requires Location access",
+//                "Location cannot be used as access is denied."
+//            )
+//        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+//                Manifest.permission.READ_PHONE_STATE
+//            )
+//        ) {
+//
+//            showRationaleDialog(
+//                "OneBanc requires Phone access",
+//                "Phone access cannot be used as access is denied."
+//            )
+//        } else {
+//            permissionResultLauncher.launch(
+//                arrayOf(
+//                    Manifest.permission.READ_SMS,
+//                    Manifest.permission.CAMERA,
+//                    Manifest.permission.ACCESS_FINE_LOCATION,
+//                    Manifest.permission.ACCESS_COARSE_LOCATION,
+//                    Manifest.permission.READ_PHONE_STATE
+//                )
+//            )
+//        }
+//    }
+//
+//    private fun showRationaleDialog(title: String, message: String) {
+//        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+//        builder.setTitle(title)
+//            .setMessage(message)
+//            .setPositiveButton("Cancel") { dialog, _ ->
+//                dialog.dismiss()
+//            }
+//        builder.create().show()
+//    }
 
     private val permissionResultLauncher: ActivityResultLauncher<Array<String>> =
         registerForActivityResult(

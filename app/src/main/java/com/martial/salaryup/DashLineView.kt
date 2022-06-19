@@ -23,35 +23,35 @@ open class DashLineView @JvmOverloads constructor(
     private val mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val mRectF = RectF()
 
-    //虚线的颜色
+
     var dashColor = Color.BLACK
         set(value) {
             invalidate()
             field = value
         }
 
-    //虚线的圆角
+
     var dashRadius = 0f
         set(value) {
             invalidate()
             field = value
         }
 
-    //虚线的间距
+
     var dashGap = dp2px(2f)
         set(value) {
             invalidate()
             field = value
         }
 
-    //虚线的大小
+
     var dashSize = dp2px(10f)
         set(value) {
             invalidate()
             field = value
         }
 
-    //方向
+
     private var orientation = HORIZONTAL
 
     init {

@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.martial.salaryup.OnboardingPermission.Companion.REQUEST_PERMISSION_CODE
 
 
 /**
@@ -45,7 +46,6 @@ open class OnboardingPermissionAdapter(
     )
 
     private var checkItem = -1
-    private val RECORD_REQUEST_CODE = 101
     var mcontext: Context? = null
 
     inner class OnboardingPermissionHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -77,8 +77,6 @@ open class OnboardingPermissionAdapter(
         val text = listSize[position]
         val subText = liseSizeSub[position]
         val icons = imageList[position]
-
-
 
 
         if (position == 0) {
@@ -200,7 +198,7 @@ open class OnboardingPermissionAdapter(
     ) {
         this.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
-            RECORD_REQUEST_CODE -> {
+            REQUEST_PERMISSION_CODE -> {
 
                 if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
 
