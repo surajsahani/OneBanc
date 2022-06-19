@@ -5,14 +5,15 @@
     android:layout_height="wrap_content">
 
 
-    <com.martial.salaryup.DotLineView
+    <com.martial.salaryup.DashLineView
         android:id="@+id/dlv_header"
-        android:layout_width="5dp"
+        android:layout_width="2dp"
         android:layout_height="20dp"
-        android:layout_marginStart="30dp"
-        app:dlv_dotColor="@color/grey"
-        app:dlv_dotCount="5"
-        app:dlv_isMirror="true"
+        app:dlv_dashGap="2dp"
+        app:dlv_dashSize="3dp"
+        android:layout_marginLeft="40dp"
+        app:dlv_dashColor="@color/grey"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,20 +22,21 @@
         android:id="@+id/ivIcon"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10sp"
+        android:layout_marginStart="15sp"
         android:src="@drawable/ic_sms"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dlv_header"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <com.martial.salaryup.DotLineView
+    <com.martial.salaryup.DashLineView
         android:id="@+id/dlv_footer"
-        android:layout_width="5dp"
+        android:layout_width="2dp"
         android:layout_height="20dp"
-        android:layout_below="@+id/ivIcon"
-        android:layout_marginStart="30dp"
-        app:dlv_dotColor="@color/grey"
-        app:dlv_dotCount="5"
+        app:dlv_dashGap="2dp"
+        app:dlv_dashSize="3dp"
+        android:layout_marginLeft="40dp"
+        app:dlv_dashColor="@color/grey"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivIcon" />

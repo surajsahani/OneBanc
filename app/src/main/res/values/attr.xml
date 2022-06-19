@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <declare-styleable name="DotLineView">
         <attr name="dlv_dotCount" format="integer" />
         <attr name="dlv_dotColor" format="color" />
         <attr name="dlv_isMirror" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="DashLineView">
+        <attr name="dlv_dashColor" format="color|reference" />
+        <attr name="dlv_dashRadius" format="dimension" />
+        <attr name="dlv_dashSize" format="dimension" />
+        <attr name="dlv_dashGap" format="dimension" />
     </declare-styleable>
 </resources>

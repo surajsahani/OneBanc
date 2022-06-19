@@ -7,14 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.view.isGone
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -56,8 +52,9 @@ open class OnboardingPermissionAdapter(
         var tv: TextView? = null
         var subTv: TextView? = null
         var iconsIv: ImageView? = null
-        var dlvHeader : View? = null
-        var dlvFooter : View? = null
+        var dlvHeader: View? = null
+        var dlvFooter: View? = null
+
         init {
             tv = view.findViewById(R.id.tv1Permission)
             subTv = view.findViewById(R.id.tvSub1)
@@ -82,20 +79,20 @@ open class OnboardingPermissionAdapter(
         val icons = imageList[position]
 
 
-        holder.dlvHeader?.visibility = if (position == 0) View.INVISIBLE else View.VISIBLE
-        holder.dlvHeader?.visibility = if (position == 5) View.INVISIBLE else View.VISIBLE
 
 
         if (position == 0) {
-//            holder.dlvHeader?.visibility = View.INVISIBLE
+            holder.dlvHeader?.visibility = View.INVISIBLE
             holder.tv?.apply {
-                textSize = 40f
-
+                textSize = 18f
+            }
+            holder.tv?.apply {
+                textSize = 18f
             }
         }
         if (position == 1) {
             holder.tv?.apply {
-
+                textSize = 14f
             }
             holder.subTv?.apply {
                 textSize = 0f
@@ -103,19 +100,25 @@ open class OnboardingPermissionAdapter(
         }
         if (position == 2) {
             holder.tv?.apply {
-
+                textSize = 14f
             }
             holder.subTv?.apply {
                 textSize = 0f
             }
         }
         if (position == 3) {
+            holder.tv?.apply {
+                textSize = 14f
+            }
             holder.subTv?.apply {
                 textSize = 0f
             }
         }
         if (position == 4) {
-//            holder.dlvFooter?.visibility = View.INVISIBLE
+            holder.dlvFooter?.visibility = View.INVISIBLE
+            holder.tv?.apply {
+                textSize = 14f
+            }
             holder.subTv?.apply {
                 textSize = 0f
             }
