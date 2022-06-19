@@ -3,12 +3,9 @@ package com.martial.salaryup
 import android.Manifest
 import android.app.AlertDialog
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,7 +13,6 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -52,7 +48,6 @@ class OnboardingPermission : AppCompatActivity() {
         onClick()
 
         //data to populate the data for recyclerView
-        //data to populate the data for recyclerView
         val data: ArrayList<String> = ArrayList()
         for (i in 0..5) {
             data.add("permission # $i")
@@ -60,11 +55,19 @@ class OnboardingPermission : AppCompatActivity() {
 
         permissionRecyclerView = findViewById(R.id.permissionRecyclerView)
         permissionRecyclerView.layoutManager = LinearLayoutManager(this)
-        permissionRecyclerView.adapter = OnboardingPermissionAdapter(data)
-        //permissionRecyclerView.smoothScrollToPosition(0)
-        //permissionRecyclerView.scrollToPosition(data.size - 1)
+        permissionRecyclerView.adapter = OnboardingPermissionAdapter(
+            this,
+            data,
+            object : OnboardingPermissionAdapter.OnClickListener {
+                override fun permissionData(item: String?) {
 
+                }
 
+            })
+        val linearLayoutManager = LinearLayoutManager(this@OnboardingPermission)
+//        linearLayoutManager.reverseLayout = true
+//        linearLayoutManager.stackFromEnd = true
+//        permissionRecyclerView.layoutManager = linearLayoutManager
     }
 
     fun initialize() {
@@ -75,6 +78,7 @@ class OnboardingPermission : AppCompatActivity() {
 
     fun onClick() {
         grantPermission.setOnClickListener {
+
             setupPermission()
         }
         closeIconPermission.setOnClickListener {

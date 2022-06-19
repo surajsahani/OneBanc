@@ -1,16 +1,20 @@
 package com.martial.salaryup
 
 
+import android.content.Context
 import android.content.pm.PackageManager
-import android.content.res.Resources
-import android.graphics.Typeface
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.view.isGone
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -20,7 +24,11 @@ import androidx.recyclerview.widget.RecyclerView
  */
 
 
-class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
+open class OnboardingPermissionAdapter(
+    private val context: Context,
+    private var data: ArrayList<String>,
+    private val itemclick: OnClickListener
+) :
     RecyclerView.Adapter<OnboardingPermissionAdapter.OnboardingPermissionHolder>(),
     ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -42,16 +50,20 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
 
     private var checkItem = -1
     private val RECORD_REQUEST_CODE = 101
+    var mcontext: Context? = null
 
     inner class OnboardingPermissionHolder(view: View) : RecyclerView.ViewHolder(view) {
         var tv: TextView? = null
         var subTv: TextView? = null
         var iconsIv: ImageView? = null
-
+        var dlvHeader : View? = null
+        var dlvFooter : View? = null
         init {
             tv = view.findViewById(R.id.tv1Permission)
             subTv = view.findViewById(R.id.tvSub1)
             iconsIv = view.findViewById(R.id.ivIcon)
+            dlvHeader = view.findViewById(R.id.dlv_header)
+            dlvFooter = view.findViewById(R.id.dlv_footer)
         }
     }
 
@@ -69,10 +81,54 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
         val subText = liseSizeSub[position]
         val icons = imageList[position]
 
-        if (position%5==0) {
-            holder.tv?.textSize = 30f
-        } else {
-            holder.subTv?.textSize = 0f
+
+        holder.dlvHeader?.visibility = if (position == 0) View.INVISIBLE else View.VISIBLE
+        holder.dlvHeader?.visibility = if (position == 5) View.INVISIBLE else View.VISIBLE
+
+
+        if (position == 0) {
+//            holder.dlvHeader?.visibility = View.INVISIBLE
+            holder.tv?.apply {
+                textSize = 40f
+
+            }
+        }
+        if (position == 1) {
+            holder.tv?.apply {
+
+            }
+            holder.subTv?.apply {
+                textSize = 0f
+            }
+        }
+        if (position == 2) {
+            holder.tv?.apply {
+
+            }
+            holder.subTv?.apply {
+                textSize = 0f
+            }
+        }
+        if (position == 3) {
+            holder.subTv?.apply {
+                textSize = 0f
+            }
+        }
+        if (position == 4) {
+//            holder.dlvFooter?.visibility = View.INVISIBLE
+            holder.subTv?.apply {
+                textSize = 0f
+            }
+        }
+//        if (position % 5 == 0) {
+//            holder.tv?.textSize = 30f
+//            holder.tv.
+//        } else {
+//            holder.subTv?.textSize = 0f
+//        }
+        holder.tv?.setOnClickListener {
+            Toast.makeText(mcontext, "Fuck handler", Toast.LENGTH_SHORT).show()
+            holder.tv?.textSize = 0f
         }
 
         holder.tv?.apply {
@@ -124,6 +180,9 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
 
     fun getCheckedSize() = listSize[checkItem]
 
+    private fun onItemClick(position: Int) {
+        Toast.makeText(mcontext, listSize[position], Toast.LENGTH_SHORT).show()
+    }
 
     override fun getItemCount() = listSize.size
 
@@ -153,5 +212,9 @@ class OnboardingPermissionAdapter(val mContext: ArrayList<String>) :
                 }
             }
         }
+    }
+
+    interface OnClickListener {
+        fun permissionData(item: String?)
     }
 }
