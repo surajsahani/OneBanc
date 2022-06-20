@@ -83,11 +83,12 @@ class OnboardingPermission : AppCompatActivity() {
 
     fun onClick() {
         grantPermission.setOnClickListener {
-            smsPermission()
-            cameraPermission()
-            microphonePermission()
-            locationPermission()
-            phoneIdentity()
+            setupPermission()
+//            smsPermission()
+//            cameraPermission()
+//            microphonePermission()
+//            locationPermission()
+//            phoneIdentity()
         }
         closeIconPermission.setOnClickListener {
             finish()
@@ -151,79 +152,79 @@ class OnboardingPermission : AppCompatActivity() {
         }
     }
 
-//    private fun setupPermission() {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-//                Manifest.permission.CAMERA
-//            )
-//        ) {
-//            showRationaleDialog(
-//                "OneBanc requires camera access",
-//                "Camera cannot be used as access is denied."
-//            )
-//        }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-//                Manifest.permission.READ_SMS
-//            )
-//        ) {
-//
-//            showRationaleDialog(
-//                "OneBanc requires SMS access",
-//                "SMS cannot be used as access is denied."
-//            )
-//        }
-//
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-//                Manifest.permission.RECORD_AUDIO
-//            )
-//        ) {
-//
-//            showRationaleDialog(
-//                "OneBanc requires Audio access",
-//                "Audio cannot be used as access is denied."
-//            )
-//
-//        }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-//                Manifest.permission.ACCESS_FINE_LOCATION
-//            ) && shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)
-//        ) {
-//
-//            showRationaleDialog(
-//                "OneBanc requires Location access",
-//                "Location cannot be used as access is denied."
-//            )
-//        }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-//                Manifest.permission.READ_PHONE_STATE
-//            )
-//        ) {
-//
-//            showRationaleDialog(
-//                "OneBanc requires Phone access",
-//                "Phone access cannot be used as access is denied."
-//            )
-//        } else {
-//            permissionResultLauncher.launch(
-//                arrayOf(
-//                    Manifest.permission.READ_SMS,
-//                    Manifest.permission.CAMERA,
-//                    Manifest.permission.ACCESS_FINE_LOCATION,
-//                    Manifest.permission.ACCESS_COARSE_LOCATION,
-//                    Manifest.permission.READ_PHONE_STATE
-//                )
-//            )
-//        }
-//    }
-//
-//    private fun showRationaleDialog(title: String, message: String) {
-//        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-//        builder.setTitle(title)
-//            .setMessage(message)
-//            .setPositiveButton("Cancel") { dialog, _ ->
-//                dialog.dismiss()
-//            }
-//        builder.create().show()
-//    }
+    private fun setupPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+                Manifest.permission.CAMERA
+            )
+        ) {
+            showRationaleDialog(
+                "OneBanc requires camera access",
+                "Camera cannot be used as access is denied."
+            )
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+                Manifest.permission.READ_SMS
+            )
+        ) {
+
+            showRationaleDialog(
+                "OneBanc requires SMS access",
+                "SMS cannot be used as access is denied."
+            )
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+                Manifest.permission.RECORD_AUDIO
+            )
+        ) {
+
+            showRationaleDialog(
+                "OneBanc requires Audio access",
+                "Audio cannot be used as access is denied."
+            )
+
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) && shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION)
+        ) {
+
+            showRationaleDialog(
+                "OneBanc requires Location access",
+                "Location cannot be used as access is denied."
+            )
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+                Manifest.permission.READ_PHONE_STATE
+            )
+        ) {
+
+            showRationaleDialog(
+                "OneBanc requires Phone access",
+                "Phone access cannot be used as access is denied."
+            )
+        } else {
+            permissionResultLauncher.launch(
+                arrayOf(
+                    Manifest.permission.READ_SMS,
+                    Manifest.permission.CAMERA,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.READ_PHONE_STATE
+                )
+            )
+        }
+    }
+
+    private fun showRationaleDialog(title: String, message: String) {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+        builder.create().show()
+    }
 
     private val permissionResultLauncher: ActivityResultLauncher<Array<String>> =
         registerForActivityResult(

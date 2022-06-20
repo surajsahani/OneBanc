@@ -78,6 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subwelcomeTv" />
 
+
     <TextView
         android:id="@+id/bankingPartner"
         android:layout_width="wrap_content"

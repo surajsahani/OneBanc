@@ -42,11 +42,11 @@ class OnboardingInviteCode : AppCompatActivity() {
         btNextInviteCode.setOnClickListener {
 
             val code: String = etInviteCode.text.toString()
-            if(code.length == 6) {
+            if (code.length == 6) {
                 val intent = Intent(this, OnboardingName::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
-            }  else  {
+            } else {
                 etInviteCode.error = "Invalid Code"
             }
 

@@ -35,6 +35,7 @@ class OnboardingMobile : AppCompatActivity() {
         closeIconPhone = findViewById(R.id.closeIconPhone)
         etPhone = findViewById(R.id.etPhone)
     }
+
     private fun isValidPhone(email: String): Boolean {
         val pattern: Pattern = Patterns.PHONE
         return pattern.matcher(email).matches()
@@ -79,6 +80,7 @@ class OnboardingMobile : AppCompatActivity() {
         super.onRestart()
         etPhone.setText("")
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         finish()

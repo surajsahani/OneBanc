@@ -5,11 +5,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.*
 import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraManager
 import android.os.Bundle
 import android.view.SurfaceHolder
 import android.view.SurfaceView
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -36,6 +38,8 @@ class OnboardingScanCode : AppCompatActivity() {
     private lateinit var scannerFlash: ImageView
     private lateinit var surfaceBlur: SurfaceView
     private lateinit var closeIconScan: ImageView
+    private lateinit var animationLine: View
+    private lateinit var scannerGallary: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +47,7 @@ class OnboardingScanCode : AppCompatActivity() {
 
 
         svBarcode = findViewById(R.id.scannerView)
+
         tvBarcode = findViewById(R.id.etbarCode)
 
         surfaceBlur = findViewById(R.id.surfaceBlur)
@@ -50,6 +55,28 @@ class OnboardingScanCode : AppCompatActivity() {
         scannerFlash = findViewById(R.id.scannerFlash)
 
         closeIconScan = findViewById(R.id.closeIconScan)
+
+        scannerGallary = findViewById(R.id.scannerGallary)
+
+//        val scanningView = findViewById<View>(R.id.animationHorizentalLine) as MyScanningView
+//        scanningView.startAnimation() //To start Animation
+//
+//        animationLine = findViewById(R.id.animationHorizentalLine)
+//        val animUpDown: Animation = AnimationUtils.loadAnimation(
+//            applicationContext,
+//            R.anim.animupdown
+//        )
+
+//        animationLine.setOnClickListener {
+//            animationLine.startAnimation(animUpDown)
+//        }
+
+
+        val sfvTrack = findViewById<SurfaceView>(R.id.surfaceBlur)
+        //sfvTrack.setZOrderOnTop(true) // necessary
+        val sfhTrackHolder = sfvTrack.holder
+        sfhTrackHolder.setFormat(PixelFormat.TRANSLUCENT)
+
 
         detector = BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.ALL_FORMATS).build()
         detector.setProcessor(object : Detector.Processor<Barcode> {
@@ -76,6 +103,7 @@ class OnboardingScanCode : AppCompatActivity() {
 
         cameraSource = CameraSource.Builder(this, detector).setRequestedPreviewSize(1024, 768)
             .setRequestedFps(25f).setAutoFocusEnabled(true).build()
+
 
         svBarcode.holder.addCallback(object : SurfaceHolder.Callback2 {
             override fun surfaceRedrawNeeded(p0: SurfaceHolder) {}
@@ -105,6 +133,8 @@ class OnboardingScanCode : AppCompatActivity() {
             }
         })
 
+        //surfaceBlur.setBackgroundColor(0Xffffffff.toInt())
+        surfaceBlur.holder.setFormat(PixelFormat.TRANSLUCENT);
 
         surfaceBlur.holder.addCallback(object : SurfaceHolder.Callback2 {
             override fun surfaceRedrawNeeded(p0: SurfaceHolder) {}
@@ -118,6 +148,7 @@ class OnboardingScanCode : AppCompatActivity() {
 
             override fun surfaceCreated(p0: SurfaceHolder) {
                 //Check Camera permission
+
                 if (ContextCompat.checkSelfPermission(
                         this@OnboardingScanCode,
                         android.Manifest.permission.CAMERA

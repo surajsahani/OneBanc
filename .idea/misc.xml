@@ -40,6 +40,7 @@
         <entry key="app/src/main/res/drawable/textinputboarder.xml" value="0.165" />
         <entry key="app/src/main/res/font-v26/font.xml" value="0.19444444444444445" />
         <entry key="app/src/main/res/font/font.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_blur.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_blurr_view.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_customer_onboarding.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -50,8 +51,9 @@
         <entry key="app/src/main/res/layout/activity_onboarding_name.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_phone.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_onboarding_scan.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_onboarding_scan.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_onboarding_web_view.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_onboarding_welcome.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.22" />
         <entry key="app/src/main/res/layout/content_blurr_view.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/content_onboarding_web_view.xml" value="0.19375" />
