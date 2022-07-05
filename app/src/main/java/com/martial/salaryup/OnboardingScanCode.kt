@@ -1,11 +1,13 @@
 package com.martial.salaryup
 
 
+import android.R.attr.checked
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.*
+import android.graphics.PixelFormat
+import android.hardware.Camera
 import android.os.Bundle
 import android.view.SurfaceHolder
 import android.view.SurfaceView
@@ -15,6 +17,7 @@ import android.view.animation.TranslateAnimation
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -41,13 +44,20 @@ class OnboardingScanCode : AppCompatActivity() {
     private lateinit var scannerGallary: ImageView
     private lateinit var animeteOR: View
 
-    private lateinit var mContext: Context
-
+    var toggleButton: ToggleButton? = null
+    var camera: Camera? =   null
+    var check : Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding_scan)
 
+        initialize()
+        motion()
+        cameraSource()
+        onClick()
+    }
 
+    fun initialize() {
         svBarcode = findViewById(R.id.scannerView)
         tvBarcode = findViewById(R.id.etbarCode)
         surfaceBlur = findViewById(R.id.surfaceBlur)
@@ -55,23 +65,19 @@ class OnboardingScanCode : AppCompatActivity() {
         closeIconScan = findViewById(R.id.closeIconScan)
         scannerGallary = findViewById(R.id.scannerGallary)
         animeteOR = findViewById(R.id.animeteOR)
-        mContext = this
+    }
 
+    fun motion() {
         val animation = TranslateAnimation(0f, 0f, -200f, 200f)
         animation.duration = 1000;
         animation.fillAfter = true;
         animation.isFillEnabled = true;
         animation.repeatMode = Animation.REVERSE
         animation.repeatCount = Animation.INFINITE
-        animeteOR.startAnimation(animation);
+        animeteOR.startAnimation(animation)
+    }
 
-
-        val sfvTrack = findViewById<SurfaceView>(R.id.surfaceBlur)
-        // sfvTrack.setZOrderOnTop(true) // necessary
-        val sfhTrackHolder = sfvTrack.holder
-        sfhTrackHolder.setFormat(PixelFormat.TRANSLUCENT)
-
-
+    fun cameraSource() {
         detector = BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.ALL_FORMATS).build()
         detector.setProcessor(object : Detector.Processor<Barcode> {
             override fun release() {
@@ -88,20 +94,17 @@ class OnboardingScanCode : AppCompatActivity() {
                         tvBarcode.text = builder.toString()
                         //tvBarcode.text = barcodes.valueAt(0).displayValue
                     }
-
                 }
-
             }
-
         })
 
         cameraSource = CameraSource.Builder(this, detector).setRequestedPreviewSize(1024, 768)
             .setRequestedFps(25f).setAutoFocusEnabled(true).build()
 
-
-
         svBarcode.holder.addCallback(object : SurfaceHolder.Callback2 {
-            override fun surfaceRedrawNeeded(p0: SurfaceHolder) {}
+            override fun surfaceRedrawNeeded(p0: SurfaceHolder) {
+
+            }
 
             override fun surfaceChanged(p0: SurfaceHolder, format: Int, w: Int, h: Int) {}
 
@@ -125,6 +128,7 @@ class OnboardingScanCode : AppCompatActivity() {
                         123
                     )
                 }
+
             }
         })
 
@@ -139,7 +143,6 @@ class OnboardingScanCode : AppCompatActivity() {
             // Main Camera processing.
             override fun surfaceDestroyed(p0: SurfaceHolder) {
                 cameraSource.stop()
-
             }
 
             override fun surfaceCreated(p0: SurfaceHolder) {
@@ -160,7 +163,9 @@ class OnboardingScanCode : AppCompatActivity() {
                 }
             }
         })
+    }
 
+    fun onClick() {
         tvBarcode.setOnClickListener {
             val intent = Intent(this, OnboardingInviteCode::class.java)
             startActivity(intent)
@@ -216,4 +221,6 @@ class OnboardingScanCode : AppCompatActivity() {
     private fun handleActionTurnOffFlashLight(context: Context) {
 
     }
+
+
 }

@@ -7,11 +7,13 @@
         <entry key="app/src/main/res/drawable/background_view_scanner.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bottom_to_top.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/camera_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/card_view_background.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/close-48px.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/close.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/close_open.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/fadding_view.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/flashlight_on.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/ic__09629.xml" value="0.181" />
         <entry key="app/src/main/res/drawable/ic__09685.xml" value="0.181" />
         <entry key="app/src/main/res/drawable/ic_android.xml" value="0.1805" />
@@ -56,7 +58,7 @@
         <entry key="app/src/main/res/layout/activity_onboarding_name.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_phone.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_onboarding_scan.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_onboarding_scan.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_onboarding_web_view.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_onboarding_welcome.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.22" />

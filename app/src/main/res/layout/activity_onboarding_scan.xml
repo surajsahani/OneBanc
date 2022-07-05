@@ -50,6 +50,7 @@
         android:layout_marginEnd="26dp"
         android:paddingBottom="10dp"
         android:text="@string/scan_your_invite_code"
+        android:textColor="#424242"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -62,6 +63,7 @@
         android:id="@+id/scannerViewCard"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:background="@drawable/card_view_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,13 +78,9 @@
         <View
             android:id="@+id/animeteOR"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:requiresFadingEdge="horizontal"
-            android:fadingEdgeLength="40dp"
-            android:ellipsize="none"
+            android:layout_height="20dp"
             android:layout_gravity="center_vertical"
-            android:background="@color/purple_200"
-            android:repeatCount="infinite" />
+            android:background="@drawable/gradient_background" />
     </androidx.cardview.widget.CardView>
 
 
