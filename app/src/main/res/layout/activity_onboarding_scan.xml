@@ -77,6 +77,9 @@
             android:id="@+id/animeteOR"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:requiresFadingEdge="horizontal"
+            android:fadingEdgeLength="40dp"
+            android:ellipsize="none"
             android:layout_gravity="center_vertical"
             android:background="@color/purple_200"
             android:repeatCount="infinite" />

@@ -11,7 +11,7 @@ import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.view.View
 import android.view.animation.Animation
-import android.view.animation.AnimationUtils
+import android.view.animation.TranslateAnimation
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -22,7 +22,6 @@ import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
-import java.security.AccessController.getContext
 
 
 /**
@@ -50,44 +49,25 @@ class OnboardingScanCode : AppCompatActivity() {
 
 
         svBarcode = findViewById(R.id.scannerView)
-
         tvBarcode = findViewById(R.id.etbarCode)
-
         surfaceBlur = findViewById(R.id.surfaceBlur)
-
         scannerFlash = findViewById(R.id.scannerFlash)
-
         closeIconScan = findViewById(R.id.closeIconScan)
-
         scannerGallary = findViewById(R.id.scannerGallary)
-
         animeteOR = findViewById(R.id.animeteOR)
-
-
-        // animeteOR.animate().x(500f).y(500f).setDuration(10000).start()
-
-        // animeteOR.startAnimation(R.anim.slide_in_up)
         mContext = this
 
-        //animeteOR.animate().x(100f).z(100f).setDuration(1000).start()
-
-        // animeteOR.startAnimation(AnimationUtils.loadAnimation(mContext, R.anim.animupdown))
-
-//        val scanningView = findViewById<View>(R.id.animationHorizentalLine) as MyScanningView
-//        scanningView.startAnimation() //To start Animation
-//
-//        animationLine = findViewById(R.id.animationHorizentalLine)
-//        val animUpDown: Animation = AnimationUtils.loadAnimation(
-//            applicationContext,
-//            R.anim.animupdown
-//        )
-//        animationLine.setOnClickListener {
-//            animationLine.startAnimation(animUpDown)
-//        }
+        val animation = TranslateAnimation(0f, 0f, -200f, 200f)
+        animation.duration = 1000;
+        animation.fillAfter = true;
+        animation.isFillEnabled = true;
+        animation.repeatMode = Animation.REVERSE
+        animation.repeatCount = Animation.INFINITE
+        animeteOR.startAnimation(animation);
 
 
         val sfvTrack = findViewById<SurfaceView>(R.id.surfaceBlur)
-        //sfvTrack.setZOrderOnTop(true) // necessary
+        // sfvTrack.setZOrderOnTop(true) // necessary
         val sfhTrackHolder = sfvTrack.holder
         sfhTrackHolder.setFormat(PixelFormat.TRANSLUCENT)
 
@@ -125,13 +105,13 @@ class OnboardingScanCode : AppCompatActivity() {
 
             override fun surfaceChanged(p0: SurfaceHolder, format: Int, w: Int, h: Int) {}
 
-            //Main Camera processing.
+            // Main Camera processing.
             override fun surfaceDestroyed(p0: SurfaceHolder) {
                 cameraSource.stop()
             }
 
             override fun surfaceCreated(p0: SurfaceHolder) {
-                //Check Camera permission
+                // Check Camera permission
                 if (ContextCompat.checkSelfPermission(
                         this@OnboardingScanCode,
                         android.Manifest.permission.CAMERA
@@ -148,7 +128,7 @@ class OnboardingScanCode : AppCompatActivity() {
             }
         })
 
-        //surfaceBlur.setBackgroundColor(0Xffffffff.toInt())
+        // surfaceBlur.setBackgroundColor(0Xffffffff.toInt())
         surfaceBlur.holder.setFormat(PixelFormat.TRANSLUCENT);
 
         surfaceBlur.holder.addCallback(object : SurfaceHolder.Callback2 {
@@ -156,14 +136,14 @@ class OnboardingScanCode : AppCompatActivity() {
 
             override fun surfaceChanged(p0: SurfaceHolder, format: Int, w: Int, h: Int) {}
 
-            //Main Camera processing.
+            // Main Camera processing.
             override fun surfaceDestroyed(p0: SurfaceHolder) {
                 cameraSource.stop()
 
             }
 
             override fun surfaceCreated(p0: SurfaceHolder) {
-                //Check Camera permission
+                // Check Camera permission
 
                 if (ContextCompat.checkSelfPermission(
                         this@OnboardingScanCode,
