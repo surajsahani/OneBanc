@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1805" />
+        <entry key="app/src/main/res/drawable/bottom_to_top.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/camera_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/close-48px.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/close.xml" value="0.165" />
@@ -31,6 +32,7 @@
         <entry key="app/src/main/res/drawable/ic_yes_scan.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/image.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/photo_library-48px.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/qr_code_reader_square.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/round_back.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/round_shape.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.165" />
@@ -38,6 +40,7 @@
         <entry key="app/src/main/res/drawable/scale_out_tv.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/style.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/textinputboarder.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/top_to_bottom.xml" value="0.1645" />
         <entry key="app/src/main/res/font-v26/font.xml" value="0.19444444444444445" />
         <entry key="app/src/main/res/font/font.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_blur.xml" value="0.19375" />
@@ -51,7 +54,7 @@
         <entry key="app/src/main/res/layout/activity_onboarding_name.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_onboarding_permission.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_onboarding_phone.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_onboarding_scan.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_onboarding_scan.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_onboarding_web_view.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_onboarding_welcome.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.22" />
@@ -60,7 +63,7 @@
         <entry key="app/src/main/res/layout/fragment_already_user.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/item_recyclerview.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_recyclerview.xml" value="0.22" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.1" />

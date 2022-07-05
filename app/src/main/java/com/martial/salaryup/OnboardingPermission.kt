@@ -45,6 +45,7 @@ class OnboardingPermission : AppCompatActivity() {
 
     private lateinit var closeIconPermission: ImageView
 
+    private val NUM_GRIDS = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,14 +62,11 @@ class OnboardingPermission : AppCompatActivity() {
         permissionRecyclerView = findViewById(R.id.permissionRecyclerView)
         permissionRecyclerView.layoutManager = LinearLayoutManager(this)
         permissionRecyclerView.adapter = OnboardingPermissionAdapter(
-            this,
-            data,
-            object : OnboardingPermissionAdapter.OnClickListener {
+            this, data, object : OnboardingPermissionAdapter.OnClickListener {
                 override fun permissionData(item: String?) {
-
                 }
-
             })
+
         val linearLayoutManager = LinearLayoutManager(this@OnboardingPermission)
 //        linearLayoutManager.reverseLayout = true
 //        linearLayoutManager.stackFromEnd = true

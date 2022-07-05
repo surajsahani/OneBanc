@@ -6,12 +6,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.*
-import android.hardware.camera2.CameraAccessException
-import android.hardware.camera2.CameraManager
 import android.os.Bundle
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -22,6 +22,7 @@ import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
+import java.security.AccessController.getContext
 
 
 /**
@@ -38,8 +39,10 @@ class OnboardingScanCode : AppCompatActivity() {
     private lateinit var scannerFlash: ImageView
     private lateinit var surfaceBlur: SurfaceView
     private lateinit var closeIconScan: ImageView
-    private lateinit var animationLine: View
     private lateinit var scannerGallary: ImageView
+    private lateinit var animeteOR: View
+
+    private lateinit var mContext: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +61,18 @@ class OnboardingScanCode : AppCompatActivity() {
 
         scannerGallary = findViewById(R.id.scannerGallary)
 
+        animeteOR = findViewById(R.id.animeteOR)
+
+
+        // animeteOR.animate().x(500f).y(500f).setDuration(10000).start()
+
+        // animeteOR.startAnimation(R.anim.slide_in_up)
+        mContext = this
+
+        //animeteOR.animate().x(100f).z(100f).setDuration(1000).start()
+
+        // animeteOR.startAnimation(AnimationUtils.loadAnimation(mContext, R.anim.animupdown))
+
 //        val scanningView = findViewById<View>(R.id.animationHorizentalLine) as MyScanningView
 //        scanningView.startAnimation() //To start Animation
 //
@@ -66,7 +81,6 @@ class OnboardingScanCode : AppCompatActivity() {
 //            applicationContext,
 //            R.anim.animupdown
 //        )
-
 //        animationLine.setOnClickListener {
 //            animationLine.startAnimation(animUpDown)
 //        }
@@ -103,6 +117,7 @@ class OnboardingScanCode : AppCompatActivity() {
 
         cameraSource = CameraSource.Builder(this, detector).setRequestedPreviewSize(1024, 768)
             .setRequestedFps(25f).setAutoFocusEnabled(true).build()
+
 
 
         svBarcode.holder.addCallback(object : SurfaceHolder.Callback2 {
@@ -144,6 +159,7 @@ class OnboardingScanCode : AppCompatActivity() {
             //Main Camera processing.
             override fun surfaceDestroyed(p0: SurfaceHolder) {
                 cameraSource.stop()
+
             }
 
             override fun surfaceCreated(p0: SurfaceHolder) {
@@ -214,23 +230,10 @@ class OnboardingScanCode : AppCompatActivity() {
     }
 
     private fun handleActionTurnOnFlashLight(context: Context) {
-        try {
-            val manager = context.getSystemService(Context.CAMERA_SERVICE) as CameraManager
-            val list = manager.cameraIdList
-            manager.setTorchMode(list[0], true)
-        } catch (cae: CameraAccessException) {
-            //Log.e(TAG, cae.message)
-            cae.printStackTrace()
-        }
+
     }
 
     private fun handleActionTurnOffFlashLight(context: Context) {
-        try {
-            val manager = context.getSystemService(Context.CAMERA_SERVICE) as CameraManager
-            manager.setTorchMode(manager.cameraIdList[0], false)
-        } catch (cae: CameraAccessException) {
-            //Log.e(TAG, cae.message)
-            cae.printStackTrace()
-        }
+
     }
 }

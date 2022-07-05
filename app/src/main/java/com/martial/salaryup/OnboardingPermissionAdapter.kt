@@ -55,12 +55,14 @@ open class OnboardingPermissionAdapter(
         var dlvHeader: View? = null
         var dlvFooter: View? = null
 
+
         init {
             tv = view.findViewById(R.id.tv1Permission)
             subTv = view.findViewById(R.id.tvSub1)
             iconsIv = view.findViewById(R.id.ivIcon)
             dlvHeader = view.findViewById(R.id.dlv_header)
             dlvFooter = view.findViewById(R.id.dlv_footer)
+
         }
     }
 
@@ -97,6 +99,7 @@ open class OnboardingPermissionAdapter(
             }
         }
         if (position == 2) {
+
             holder.tv?.apply {
                 textSize = 14f
             }
@@ -105,6 +108,7 @@ open class OnboardingPermissionAdapter(
             }
         }
         if (position == 3) {
+
             holder.tv?.apply {
                 textSize = 14f
             }
@@ -114,6 +118,7 @@ open class OnboardingPermissionAdapter(
         }
         if (position == 4) {
             holder.dlvFooter?.visibility = View.INVISIBLE
+
             holder.tv?.apply {
                 textSize = 14f
             }
