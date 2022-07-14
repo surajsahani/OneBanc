@@ -20,7 +20,7 @@
 
 
     <ImageView
-        android:id="@+id/closeIconScan"
+        android:id="@+id/backIconScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -122,7 +122,7 @@
         app:layout_constraintTop_toBottomOf="@id/scannerViewCard" />
 
     <TextView
-        android:id="@+id/etbarCode"
+        android:id="@+id/tvBarcode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
@@ -144,7 +144,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etbarCode">
+        app:layout_constraintTop_toBottomOf="@id/tvBarcode">
 
         <ImageView
             android:id="@+id/kotak"

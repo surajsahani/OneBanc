@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -45,7 +46,7 @@ class OnboardingPermission : AppCompatActivity() {
 
     private lateinit var closeIconPermission: ImageView
 
-    private val NUM_GRIDS = 2
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,15 +63,13 @@ class OnboardingPermission : AppCompatActivity() {
         permissionRecyclerView = findViewById(R.id.permissionRecyclerView)
         permissionRecyclerView.layoutManager = LinearLayoutManager(this)
         permissionRecyclerView.adapter = OnboardingPermissionAdapter(
+
             this, data, object : OnboardingPermissionAdapter.OnClickListener {
                 override fun permissionData(item: String?) {
                 }
-            })
+            }
+        )
 
-        val linearLayoutManager = LinearLayoutManager(this@OnboardingPermission)
-//        linearLayoutManager.reverseLayout = true
-//        linearLayoutManager.stackFromEnd = true
-//        permissionRecyclerView.layoutManager = linearLayoutManager
     }
 
     fun initialize() {
@@ -151,26 +150,19 @@ class OnboardingPermission : AppCompatActivity() {
     }
 
     private fun setupPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
-                Manifest.permission.CAMERA
-            )
-        ) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+            shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)
+        )
+
             showRationaleDialog(
                 "OneBanc requires camera access",
                 "Camera cannot be used as access is denied."
             )
-        }
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
                 Manifest.permission.READ_SMS
             )
-        ) {
-
-            showRationaleDialog(
-                "OneBanc requires SMS access",
-                "SMS cannot be used as access is denied."
-            )
-        }
-
+        )
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
                 Manifest.permission.RECORD_AUDIO
             )
@@ -235,20 +227,10 @@ class OnboardingPermission : AppCompatActivity() {
                 //if it is granted then we show its granted
                 val isGranted = it.value
                 if (isGranted) {
-//
-//                    tvSub1.visibility = INVISIBLE;
-                    /*removing static setImage with animation*/
-//                    smsRead.setImageResource(R.drawable.ic_tick)
-//                    camera.setImageResource(R.drawable.ic_tick)
-//                    audio.setImageResource(R.drawable.ic_tick)
-//                    location.setImageResource(R.drawable.ic_tick)
-//                    phone.setImageResource(R.drawable.ic_tick)
-
 
                     val intent = Intent(this, OnboardingScanCode::class.java)
                     startActivity(intent)
 
-                    //check the permission name and perform the specific operation
 
                     if (permissionName == Manifest.permission.READ_SMS) {
                         Toast.makeText(this, "Permission granted for SMS", Toast.LENGTH_SHORT)
@@ -269,8 +251,7 @@ class OnboardingPermission : AppCompatActivity() {
                         Toast.makeText(this, "Permission granted for location", Toast.LENGTH_SHORT)
                             .show()
 
-//                        tv1Permission.setTypeface(Typeface.DEFAULT)
-//                        tv1Permission.textSize = 14f
+
                     }
 
                     if (permissionName == Manifest.permission.READ_PHONE_STATE) {

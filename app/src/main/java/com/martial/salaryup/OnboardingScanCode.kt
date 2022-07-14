@@ -1,13 +1,14 @@
 package com.martial.salaryup
 
 
-import android.R.attr.checked
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.PixelFormat
-import android.hardware.Camera
+import android.hardware.camera2.CameraAccessException
+import android.hardware.camera2.CameraCharacteristics
+import android.hardware.camera2.CameraManager
+import android.os.Build
 import android.os.Bundle
 import android.view.SurfaceHolder
 import android.view.SurfaceView
@@ -17,7 +18,7 @@ import android.view.animation.TranslateAnimation
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import android.widget.ToggleButton
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -34,19 +35,24 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
 
 class OnboardingScanCode : AppCompatActivity() {
 
-    private lateinit var svBarcode: SurfaceView
+    private lateinit var scannerView: SurfaceView
     private lateinit var tvBarcode: TextView
     private lateinit var detector: BarcodeDetector
     private lateinit var cameraSource: CameraSource
-    private lateinit var scannerFlash: ImageView
     private lateinit var surfaceBlur: SurfaceView
-    private lateinit var closeIconScan: ImageView
+    private lateinit var backIconScan: ImageView
+    private lateinit var scannerFlash: ImageView
     private lateinit var scannerGallary: ImageView
     private lateinit var animeteOR: View
+    private var cameraManager: CameraManager? = null
+    private lateinit var mContext: Context
 
-    var toggleButton: ToggleButton? = null
-    var camera: Camera? =   null
-    var check : Boolean = true
+    val CAMERA_FRONT = "1"
+    val CAMERA_BACK = "0"
+
+    private val cameraId = CAMERA_BACK
+    private val isFlashSupported = false
+    private val isTorchOn = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding_scan)
@@ -58,11 +64,11 @@ class OnboardingScanCode : AppCompatActivity() {
     }
 
     fun initialize() {
-        svBarcode = findViewById(R.id.scannerView)
-        tvBarcode = findViewById(R.id.etbarCode)
+        scannerView = findViewById(R.id.scannerView)
+        tvBarcode = findViewById(R.id.tvBarcode)
         surfaceBlur = findViewById(R.id.surfaceBlur)
+        backIconScan = findViewById(R.id.backIconScan)
         scannerFlash = findViewById(R.id.scannerFlash)
-        closeIconScan = findViewById(R.id.closeIconScan)
         scannerGallary = findViewById(R.id.scannerGallary)
         animeteOR = findViewById(R.id.animeteOR)
     }
@@ -101,7 +107,8 @@ class OnboardingScanCode : AppCompatActivity() {
         cameraSource = CameraSource.Builder(this, detector).setRequestedPreviewSize(1024, 768)
             .setRequestedFps(25f).setAutoFocusEnabled(true).build()
 
-        svBarcode.holder.addCallback(object : SurfaceHolder.Callback2 {
+
+        scannerView.holder.addCallback(object : SurfaceHolder.Callback2 {
             override fun surfaceRedrawNeeded(p0: SurfaceHolder) {
 
             }
@@ -133,12 +140,16 @@ class OnboardingScanCode : AppCompatActivity() {
         })
 
         // surfaceBlur.setBackgroundColor(0Xffffffff.toInt())
-        surfaceBlur.holder.setFormat(PixelFormat.TRANSLUCENT);
+//        surfaceBlur.holder.setFormat(PixelFormat.TRANSLUCENT);
 
         surfaceBlur.holder.addCallback(object : SurfaceHolder.Callback2 {
-            override fun surfaceRedrawNeeded(p0: SurfaceHolder) {}
+            override fun surfaceRedrawNeeded(p0: SurfaceHolder) {
 
-            override fun surfaceChanged(p0: SurfaceHolder, format: Int, w: Int, h: Int) {}
+            }
+
+            override fun surfaceChanged(p0: SurfaceHolder, format: Int, w: Int, h: Int) {
+
+            }
 
             // Main Camera processing.
             override fun surfaceDestroyed(p0: SurfaceHolder) {
@@ -154,6 +165,7 @@ class OnboardingScanCode : AppCompatActivity() {
                     ) == PackageManager.PERMISSION_GRANTED
                 ) {
                     cameraSource.start(p0)
+
                 } else {
                     ActivityCompat.requestPermissions(
                         this@OnboardingScanCode,
@@ -161,6 +173,7 @@ class OnboardingScanCode : AppCompatActivity() {
                         123
                     )
                 }
+
             }
         })
     }
@@ -171,11 +184,7 @@ class OnboardingScanCode : AppCompatActivity() {
             startActivity(intent)
         }
 
-        scannerFlash.setOnClickListener {
-            handleActionTurnOnFlashLight(this)
-        }
-
-        closeIconScan.setOnClickListener {
+        backIconScan.setOnClickListener {
 
             val intent = Intent(this@OnboardingScanCode, OnboardingPermission::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -194,7 +203,7 @@ class OnboardingScanCode : AppCompatActivity() {
 
         if (requestCode == 123) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                cameraSource.start(svBarcode.holder)
+                cameraSource.start(scannerView.holder)
             } else {
                 Toast.makeText(this, "Scanner is available to allow Camera.", Toast.LENGTH_SHORT)
                     .show()
@@ -214,13 +223,17 @@ class OnboardingScanCode : AppCompatActivity() {
         finish()
     }
 
-    private fun handleActionTurnOnFlashLight(context: Context) {
 
+
+
+    fun flashLightOn() {
+        try {
+            val cameraId = cameraManager!!.cameraIdList[0]
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                cameraManager!!.setTorchMode(cameraId, true)
+            }
+        } catch (e: CameraAccessException) {
+        }
     }
-
-    private fun handleActionTurnOffFlashLight(context: Context) {
-
-    }
-
 
 }

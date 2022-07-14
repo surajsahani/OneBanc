@@ -10,9 +10,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.martial.salaryup.OnboardingPermission.Companion.REQUEST_PERMISSION_CODE
+
 
 
 /**
@@ -26,8 +25,7 @@ open class OnboardingPermissionAdapter(
     private var data: ArrayList<String>,
     private val itemclick: OnClickListener
 ) :
-    RecyclerView.Adapter<OnboardingPermissionAdapter.OnboardingPermissionHolder>(),
-    ActivityCompat.OnRequestPermissionsResultCallback {
+    RecyclerView.Adapter<OnboardingPermissionAdapter.OnboardingPermissionHolder>(){
 
     private var listSize = listOf("SMS Read", "Camera", "Microphone", "Location", "Phone Identity")
     private val liseSizeSub = listOf(
@@ -53,7 +51,11 @@ open class OnboardingPermissionAdapter(
         var subTv: TextView? = null
         var iconsIv: ImageView? = null
         var dlvHeader: View? = null
+        var dlvHeaderTwo: View? = null
+        var dlvHeaderThree: View? = null
         var dlvFooter: View? = null
+        var dlvFooterTwo: View? = null
+        var dlvFooterThree: View? = null
 
 
         init {
@@ -61,7 +63,11 @@ open class OnboardingPermissionAdapter(
             subTv = view.findViewById(R.id.tvSub1)
             iconsIv = view.findViewById(R.id.ivIcon)
             dlvHeader = view.findViewById(R.id.dlv_header)
+            dlvHeaderTwo = view.findViewById(R.id.dlv_headerTwo)
+            dlvHeaderThree = view.findViewById(R.id.dlv_headerThree)
             dlvFooter = view.findViewById(R.id.dlv_footer)
+            dlvFooterTwo = view.findViewById(R.id.dlv_footerTwo)
+            dlvFooterThree = view.findViewById(R.id.dlv_footerThree)
 
         }
     }
@@ -82,15 +88,28 @@ open class OnboardingPermissionAdapter(
 
 
         if (position == 0) {
-            holder.dlvHeader?.visibility = View.INVISIBLE
-            holder.tv?.apply {
-                textSize = 18f
-            }
+            holder.dlvHeader?.visibility = View.GONE
+            holder.dlvHeaderTwo?.visibility = View.GONE
+            holder.dlvHeaderThree?.visibility = View.GONE
+
+
+            holder.dlvFooter?.visibility = View.VISIBLE
+            holder.dlvFooterTwo?.visibility = View.GONE
+            holder.dlvFooterThree?.visibility = View.GONE
+
             holder.tv?.apply {
                 textSize = 18f
             }
         }
         if (position == 1) {
+            holder.dlvHeader?.visibility = View.VISIBLE
+            holder.dlvHeaderTwo?.visibility = View.GONE
+            holder.dlvHeaderThree?.visibility = View.GONE
+
+            holder.dlvFooter?.visibility = View.GONE
+            holder.dlvFooterTwo?.visibility = View.GONE
+            holder.dlvFooterThree?.visibility = View.GONE
+
             holder.tv?.apply {
                 textSize = 14f
             }
@@ -99,6 +118,14 @@ open class OnboardingPermissionAdapter(
             }
         }
         if (position == 2) {
+            holder.dlvHeader?.visibility = View.VISIBLE
+            holder.dlvHeaderTwo?.visibility = View.GONE
+            holder.dlvHeaderThree?.visibility = View.GONE
+
+
+            holder.dlvFooter?.visibility = View.GONE
+            holder.dlvFooterTwo?.visibility = View.GONE
+            holder.dlvFooterThree?.visibility = View.GONE
 
             holder.tv?.apply {
                 textSize = 14f
@@ -108,6 +135,13 @@ open class OnboardingPermissionAdapter(
             }
         }
         if (position == 3) {
+            holder.dlvHeader?.visibility = View.VISIBLE
+            holder.dlvHeaderTwo?.visibility = View.GONE
+            holder.dlvHeaderThree?.visibility = View.GONE
+
+            holder.dlvFooter?.visibility = View.GONE
+            holder.dlvFooterTwo?.visibility = View.GONE
+            holder.dlvFooterThree?.visibility = View.GONE
 
             holder.tv?.apply {
                 textSize = 14f
@@ -117,7 +151,13 @@ open class OnboardingPermissionAdapter(
             }
         }
         if (position == 4) {
-            holder.dlvFooter?.visibility = View.INVISIBLE
+            holder.dlvHeader?.visibility = View.VISIBLE
+            holder.dlvHeaderTwo?.visibility = View.GONE
+            holder.dlvHeaderThree?.visibility = View.GONE
+
+            holder.dlvFooter?.visibility = View.GONE
+            holder.dlvFooterTwo?.visibility = View.GONE
+            holder.dlvFooterThree?.visibility = View.GONE
 
             holder.tv?.apply {
                 textSize = 14f
@@ -144,10 +184,8 @@ open class OnboardingPermissionAdapter(
             }
             if (position == checkItem) {
                 this.isSelected = true
-                this.setTextColor(R.color.white)
             } else {
                 this.isSelected = false
-                this.setTextColor(R.color.black)
             }
         }
         holder.subTv?.apply {
@@ -157,10 +195,8 @@ open class OnboardingPermissionAdapter(
             }
             if (position == checkItem) {
                 this.isSelected = true
-                this.setTextColor(R.color.white)
             } else {
                 this.isSelected = false
-                this.setTextColor(R.color.black)
             }
         }
 
@@ -191,34 +227,6 @@ open class OnboardingPermissionAdapter(
     }
 
     override fun getItemCount() = listSize.size
-
-    companion object {
-        val TAG = "ModalAdapter"
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        this.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when (requestCode) {
-            REQUEST_PERMISSION_CODE -> {
-
-                if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-
-                    Log.i(TAG, "Permission has been denied by user")
-
-
-                } else {
-
-                    Log.i(TAG, "Permission has been granted by user")
-
-
-                }
-            }
-        }
-    }
 
     interface OnClickListener {
         fun permissionData(item: String?)

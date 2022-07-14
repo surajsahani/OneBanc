@@ -17,7 +17,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.martial.salaryup.DashLineView
+        android:id="@+id/dlv_headerTwo"
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        app:dlv_dashGap="2dp"
+        app:dlv_dashSize="3dp"
+        android:layout_marginLeft="40dp"
+        app:dlv_dashColor="@color/grey"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/dlv_header"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <com.martial.salaryup.DashLineView
+        android:id="@+id/dlv_headerThree"
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        app:dlv_dashGap="2dp"
+        app:dlv_dashSize="3dp"
+        android:layout_marginLeft="40dp"
+        app:dlv_dashColor="@color/grey"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/dlv_headerTwo"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
         android:id="@+id/ivIcon"
@@ -26,7 +48,7 @@
         android:layout_marginStart="15sp"
         android:src="@drawable/ic_sms"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dlv_header"
+        app:layout_constraintTop_toBottomOf="@id/dlv_headerThree"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <com.martial.salaryup.DashLineView
@@ -38,10 +60,35 @@
         android:layout_marginLeft="40dp"
         app:dlv_dashColor="@color/grey"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivIcon" />
+        app:layout_constraintTop_toBottomOf="@id/ivIcon"
+        app:layout_constraintBottom_toTopOf="@id/dlv_footerTwo"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <com.martial.salaryup.DashLineView
+        android:id="@+id/dlv_footerTwo"
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        app:dlv_dashGap="2dp"
+        app:dlv_dashSize="3dp"
+        android:layout_marginLeft="40dp"
+        app:dlv_dashColor="@color/grey"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/dlv_footer"
+        app:layout_constraintBottom_toTopOf="@id/dlv_footerTwo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.martial.salaryup.DashLineView
+        android:id="@+id/dlv_footerThree"
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        app:dlv_dashGap="2dp"
+        app:dlv_dashSize="3dp"
+        android:layout_marginLeft="40dp"
+        app:dlv_dashColor="@color/grey"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/dlv_footerTwo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv1Permission"
