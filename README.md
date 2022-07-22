@@ -9,10 +9,7 @@ Custom View  for Scanning android
 
 ![unexpected-error](https://user-images.githubusercontent.com/22853459/180381053-4581a5c3-ed44-41e7-9cba-c0dd48da6440.png)
 
-https://user-images.githubusercontent.com/22853459/180381058-2b9b0977-b833-46dc-b9f1-745f612043f1.mp4
 
-
-https://user-images.githubusercontent.com/22853459/180381069-67dffb75-bffc-4d93-b660-a323fd1396ba.mp4
 
 ![network-error](https://user-images.githubusercontent.com/22853459/180381088-192111e3-7a3e-4188-81df-cc6e1245da3d.png)
 ![need-help-overlay](https://user-images.githubusercontent.com/22853459/180381091-19e1cacb-5c82-451a-b947-cef0f5fcd202.png)
@@ -34,3 +31,8 @@ https://user-images.githubusercontent.com/22853459/180381069-67dffb75-bffc-4d93-
 ![2-instructions](https://user-images.githubusercontent.com/22853459/180381147-e8161508-a600-4724-8e16-7dffd702a158.png)
 ![1-welcome-return](https://user-images.githubusercontent.com/22853459/180381148-5bd1a724-46e3-41fc-8abf-50b63c1d694e.png)
 ![1-welcome](https://user-images.githubusercontent.com/22853459/180381154-01fd47b0-d9d5-4a47-90c3-1f300d5ae19f.png)
+
+https://user-images.githubusercontent.com/22853459/180381058-2b9b0977-b833-46dc-b9f1-745f612043f1.mp4
+
+
+https://user-images.githubusercontent.com/22853459/180381069-67dffb75-bffc-4d93-b660-a323fd1396ba.mp4
